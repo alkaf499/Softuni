@@ -1,0 +1,31 @@
+import math
+
+figure_type = str(input())
+
+if figure_type == "square":
+    square_lenght = float(input())
+    area_square = square_lenght * square_lenght
+    rounded = round(area_square, 3)
+    print(rounded)
+
+
+elif figure_type == "rectangle":
+    a_lenght = float(input())
+    b_lenght = float(input())
+    area_rectangle = a_lenght * b_lenght
+    rounded = round(area_rectangle, 3)
+    print(rounded)
+
+
+elif figure_type == "circle":
+    circle_radius = float(input())
+    area_circle = math.pi * circle_radius * circle_radius
+    rounded = round(area_circle, 3)
+    print(rounded)
+
+elif figure_type == "triangle":
+    triangle_base_lenght = float(input())
+    triangle_height = float(input())
+    area_triangle = 1/2 * triangle_base_lenght * triangle_height
+    rounded = round(area_triangle, 3)
+    print(rounded)
