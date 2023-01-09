@@ -1,0 +1,12 @@
+x_aquarium = int(input())
+y_aquarium = int(input())
+z_aquarium = int(input())
+pourcent_surface = float(input())
+
+watervolume_aquarium = ( x_aquarium * y_aquarium * z_aquarium ) / 1000
+
+earth_volume = pourcent_surface / 100
+
+final_watervolume = watervolume_aquarium - watervolume_aquarium * earth_volume
+
+print(final_watervolume)
