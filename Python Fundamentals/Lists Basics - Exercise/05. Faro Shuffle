@@ -1,0 +1,17 @@
+deck = input().split()
+
+count = int(input())
+
+for time in range(count):
+    new_deck = []
+    middle = len(deck) // 2
+    l_part = deck[0:middle]
+    r_part = deck[middle::]
+
+    for i in range(len(l_part)):
+        new_deck.append(l_part[i])
+        new_deck.append(r_part[i])
+
+    deck = new_deck
+
+print(new_deck)
