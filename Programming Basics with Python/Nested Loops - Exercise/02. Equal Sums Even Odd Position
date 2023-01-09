@@ -1,0 +1,28 @@
+number1 = int(input())
+number2 = int(input())
+
+
+for i in range(number1, number2 +1):
+
+    number_To_str = str(i)
+    se = 0
+    sodd = 0
+
+    for index, digit in enumerate(number_To_str):
+        if index % 2 == 0:
+            sodd += int(digit)
+
+        else:
+            se += int(digit)
+
+    if se == sodd:
+        print(i, end=" ")
+
+
+
+
+
+
+
+
+
