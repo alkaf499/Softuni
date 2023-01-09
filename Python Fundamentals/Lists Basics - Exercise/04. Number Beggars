@@ -1,0 +1,49 @@
+coins = input().split(", ")
+beggars = int(input())
+
+final = []
+
+counter_of_index = 0
+
+sum_list_as_digits =  []
+
+for i in coins:
+
+    sum_list_as_digits.append(int(i))
+
+
+while counter_of_index < beggars:
+
+    sum_temp = 0
+
+    for element in range(counter_of_index, len(sum_list_as_digits), beggars):
+
+        sum_temp += sum_list_as_digits[element]
+
+    counter_of_index += 1
+
+    final.append(sum_temp)
+
+print(final)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
