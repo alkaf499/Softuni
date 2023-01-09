@@ -1,0 +1,15 @@
+num_lines = int(input())
+
+total = 0
+
+for i in range(0, num_lines):
+
+    char = input()
+
+    number = ord(str(char))
+
+    number = int(number)
+
+    total += number
+
+print(f" The sum equals: {total}")
