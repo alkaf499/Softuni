@@ -1,0 +1,8 @@
+from math import floor
+Number_of_pages = int(input())
+Pages_per_hour = int(input())
+Number_of_days_per_book = int(input())
+
+Hours_per_day_reading = ( Number_of_pages / Number_of_days_per_book ) / Pages_per_hour
+
+print(floor(Hours_per_day_reading))
