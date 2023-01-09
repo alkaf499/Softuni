@@ -1,0 +1,128 @@
+fruit = str(input())
+week_day = str(input())
+quantity = float(input())
+
+
+
+if (week_day == "Monday" or week_day  == "Tuesday" or week_day == "Wednesday" or week_day == "Thursday" or week_day == "Friday") and (fruit == "banana" or fruit == "apple" or fruit == "orange" or fruit == "grapefruit"  or fruit == "pineapple" or fruit == "grapes" or fruit == "kiwi"):
+
+    if fruit == "banana":
+
+      price = round(2.50 * quantity, 2)
+
+      priceprint = "{:.2f}".format(price)
+
+      print(priceprint)
+
+    elif fruit == "apple":
+
+       price = round(1.20 * quantity, 2)
+
+       priceprint = "{:.2f}".format(price)
+
+       print(priceprint)
+
+    elif fruit == "orange":
+
+        price = round(0.85 * quantity, 2)
+
+        priceprint = "{:.2f}".format(price)
+
+        print(priceprint)
+
+    elif fruit == "grapefruit":
+
+        price = round(1.45 * quantity, 2)
+
+        priceprint = "{:.2f}".format(price)
+
+        print(priceprint)
+
+    elif fruit == "kiwi":
+
+        price = round(2.70 * quantity, 2)
+
+        priceprint = "{:.2f}".format(price)
+
+        print(priceprint)
+
+    elif fruit == "pineapple":
+
+        price = round(5.50 * quantity, 2)
+
+        priceprint = "{:.2f}".format(price)
+
+        print(priceprint)
+
+
+    elif fruit == "grapes":
+
+        price = round(3.85 * quantity, 2)
+
+        priceprint = "{:.2f}".format(price)
+
+        print(priceprint)
+
+
+elif (week_day == "Saturday" or week_day == "Sunday") and (fruit == "banana" or fruit == "apple" or fruit == "orange" or fruit == "grapefruit"  or fruit == "pineapple" or fruit == "grapes" or fruit == "kiwi"):
+
+    if fruit == "banana":
+
+        price = round(2.70 * quantity, 2)
+
+        priceprint = "{:.2f}".format(price)
+
+        print(priceprint)
+
+    elif fruit == "apple":
+
+        price = round(1.25 * quantity, 2)
+
+        priceprint = "{:.2f}".format(price)
+
+        print(priceprint)
+
+    elif fruit == "orange":
+
+        price = round(0.90 * quantity, 2)
+
+        priceprint = "{:.2f}".format(price)
+
+        print(priceprint)
+
+    elif fruit == "grapefruit":
+
+        price = round(1.60 * quantity, 2)
+
+        priceprint = "{:.2f}".format(price)
+
+        print(priceprint)
+
+    elif fruit == "kiwi":
+
+        price = round(3.00 * quantity, 2)
+
+        priceprint = "{:.2f}".format(price)
+
+        print(priceprint)
+
+    elif fruit == "pineapple":
+
+        price = round(5.60 * quantity, 2)
+
+        priceprint = "{:.2f}".format(price)
+
+        print(priceprint)
+
+
+    elif fruit == "grapes":
+
+        price = round(4.20 * quantity, 2)
+
+        priceprint = "{:.2f}".format(price)
+
+        print(priceprint)
+
+else:
+
+    print ("error")
