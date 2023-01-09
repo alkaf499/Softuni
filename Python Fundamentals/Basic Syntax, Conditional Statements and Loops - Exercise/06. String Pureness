@@ -1,0 +1,28 @@
+number = int(input())
+
+for i in range(number):
+
+    word = str(input())
+
+    a = "_"
+    a1 = "."
+    a2 = ","
+
+    if a in word or a1 in word or a2 in word :
+
+        print(f"{word} is not pure!")
+
+
+    else:
+
+        print(f"{word} is pure.")
+
+
+
+
+
+
+
+
+
+
