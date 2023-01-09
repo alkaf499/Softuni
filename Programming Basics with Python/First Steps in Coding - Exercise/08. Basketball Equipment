@@ -1,0 +1,10 @@
+year_taxes = int(input())
+
+basket_shoes = year_taxes - year_taxes * 40/100
+basket_wear = basket_shoes - basket_shoes * 20/100
+ball = 1/4 * basket_wear
+accessories = 1/5 * ball
+
+final_sum = basket_shoes + basket_wear + ball + accessories + year_taxes
+
+print (final_sum)
