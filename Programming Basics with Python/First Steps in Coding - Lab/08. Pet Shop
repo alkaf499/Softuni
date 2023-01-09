@@ -1,0 +1,6 @@
+number_of_dogfood = int(input())
+number_of_catfood = int(input())
+
+Total_expenses = number_of_catfood * 4 + number_of_dogfood * 2.50
+
+print(f"{Total_expenses} lv.")
