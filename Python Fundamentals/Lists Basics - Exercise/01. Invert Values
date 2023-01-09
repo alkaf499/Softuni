@@ -1,0 +1,7 @@
+list_numb = input().split()
+new_list = []
+
+for i in list_numb:
+    new_list.append(-int(i))
+
+print(new_list)
