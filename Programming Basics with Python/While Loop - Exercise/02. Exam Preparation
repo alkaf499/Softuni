@@ -1,0 +1,52 @@
+bad_score = int(input())
+
+fail_score_counter = 0
+
+number_of_problems = 0
+
+total_score = 0
+
+last_problem = " "
+
+while True:
+
+    if fail_score_counter == bad_score:
+
+        print(f"You need a break, {fail_score_counter} poor grades.")
+        break
+
+    else:
+
+        name_problem = str(input())
+
+    if name_problem == "Enough":
+
+        average = total_score / number_of_problems
+
+        print(f"Average score: {average:.2f}")
+        print(f"Number of problems: {number_of_problems}")
+        print(f"Last problem: {last_problem}")
+        break
+
+    score = int(input())
+
+    if score <= 4:
+
+        fail_score_counter += 1
+
+    number_of_problems += 1
+
+    total_score += score
+
+    last_problem = name_problem
+
+
+
+
+
+
+
+
+
+
+
