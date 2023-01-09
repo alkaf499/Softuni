@@ -1,0 +1,18 @@
+divisor = int(input())
+
+boundary = int(input())
+
+for i in range(0, boundary+1):
+
+   c = i // divisor
+
+   if i <= boundary and i > 0 and i % divisor == 0:
+       biggest = 0
+       if i > biggest:
+            biggest = i
+
+print(biggest)
+
+
+
+
