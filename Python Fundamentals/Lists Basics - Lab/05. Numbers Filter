@@ -1,0 +1,37 @@
+n = int(input())
+unfiltered = []
+filtered = []
+
+for i in range(n):
+    numb = int(input())
+    unfiltered.append(numb)
+    continue
+
+command = input()
+if command == "even":
+    for a in unfiltered:
+        if a % 2 == 0 or a == 0:
+            filtered.append(a)
+
+elif command == "odd":
+    for a in unfiltered:
+        if a % 2 != 0:
+            filtered.append(a)
+
+elif command == "negative":
+    for a in unfiltered:
+        if a < 0:
+            filtered.append(a)
+
+elif command == "positive":
+    for a in unfiltered:
+        if a > 0 or a == 0:
+            filtered.append(a)
+
+print(filtered)
+
+
+
+
+
+
