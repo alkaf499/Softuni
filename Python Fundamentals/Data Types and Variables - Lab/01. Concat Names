@@ -1,0 +1,7 @@
+name1 = str(input())
+
+name2 = str(input())
+
+delimeter = input()
+
+print(f"{name1}{delimeter}{name2}")
