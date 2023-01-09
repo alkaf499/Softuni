@@ -1,0 +1,56 @@
+money_for_vacation = float(input())
+current_money = float(input())
+
+days_spending = 0
+
+money_spend = 0
+
+money_saved = 0
+
+days_passed = 0
+
+while current_money < money_for_vacation and days_spending < 5:
+
+    action = str(input())
+
+    money = float(input())
+
+    days_passed += 1
+
+    if current_money >= money_for_vacation:
+
+        break
+
+    if action == "save":
+
+        current_money += money
+        days_spending = 0
+
+
+    elif action == "spend":
+
+        days_spending += 1
+
+        current_money -= money
+        if current_money <= 0:
+
+            current_money = 0
+
+        if days_spending == days_passed == 5:
+
+            break
+
+if days_spending == 5:
+
+    print("You can't save the money.")
+    print(days_passed)
+
+
+if days_spending < 5:
+    print(f"You saved the money for {days_passed} days.")
+
+
+
+
+
+
