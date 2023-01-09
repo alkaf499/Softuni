@@ -1,0 +1,30 @@
+film_budget = float(input())
+number_of_crew = int(input())
+price_of_costumer_per_crew_member = float(input())
+
+dekor = 10/100 * film_budget
+
+crew_price = number_of_crew * price_of_costumer_per_crew_member
+
+
+
+if number_of_crew > 150:
+
+    crew_price = crew_price - 10/100 * crew_price
+
+else:
+
+    crew_price = number_of_crew * price_of_costumer_per_crew_member
+
+sum_money = dekor + crew_price
+needed_money = abs(sum_money - film_budget)
+
+if sum_money > film_budget:
+
+    print(f"Not enough money!")
+    print(f" Wingard needs {needed_money:.2f} leva more.\n")
+
+elif sum_money <= film_budget:
+
+    print(f"Action!")
+    print(f"Wingard starts filming with {needed_money:.2f} leva left.\n")
