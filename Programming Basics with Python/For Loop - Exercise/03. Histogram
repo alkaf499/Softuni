@@ -1,0 +1,47 @@
+number_of_int = int(input())
+
+sum_200 = 0
+sum_399 = 0
+sum_599 = 0
+sum_799 = 0
+sum_bigger_eq_800 = 0
+
+for i in range (0, number_of_int):
+
+    a = int(input())
+    i += 1
+
+    if a < 200:
+
+        sum_200 += 1
+
+    if 200 <= a <= 399:
+
+        sum_399 += 1
+
+    if 400 <= a <= 599:
+
+        sum_599 += 1
+
+    if 600 <= a <= 799:
+        sum_799 += 1
+
+    if a >= 800:
+        sum_bigger_eq_800 += 1
+
+p1 = (sum_200 / number_of_int) * 100
+p2 = (sum_399 / number_of_int) * 100
+p3 = (sum_599 / number_of_int) * 100
+p4 = (sum_799 / number_of_int) * 100
+p5 = (sum_bigger_eq_800 / number_of_int) * 100
+
+print(f"{p1:.2f}%")
+print(f"{p2:.2f}%")
+print(f"{p3:.2f}%")
+print(f"{p4:.2f}%")
+print(f"{p5:.2f}%")
+
+
+
+
+
