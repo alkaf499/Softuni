@@ -1,0 +1,19 @@
+import math
+
+world_record_in_seconds = float(input())
+distance_in_metres = float(input())
+time_in_seconds_for_1_meter = float(input())
+
+total_seconds = time_in_seconds_for_1_meter * distance_in_metres
+
+water_resistance = math.floor(distance_in_metres/15) * 12.5
+
+time = total_seconds + water_resistance
+
+diff = abs(world_record_in_seconds - time)
+
+if world_record_in_seconds > time:
+    print(f"Yes, he succeeded! The new world record is {time:.2f} seconds.")
+
+else:
+    print(f"No, he failed! He was {diff:.2f} seconds slower.")
