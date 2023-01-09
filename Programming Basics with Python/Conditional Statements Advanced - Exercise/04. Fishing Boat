@@ -1,0 +1,49 @@
+group_budget = float(input())
+season = str(input())
+number_of_fisherman = int(input())
+
+price_ship = 0
+
+if season ==  "Spring":
+
+    price_ship = 3000
+
+elif season == "Summer" or season == "Autumn":
+
+    price_ship = 4200
+
+elif season == "Winter":
+
+    price_ship = 2600
+
+
+if number_of_fisherman <= 6:
+
+    new_price = price_ship - 10/100 * price_ship
+
+elif 7 <= number_of_fisherman <= 11:
+
+    new_price = price_ship - 15/100 * price_ship
+
+
+
+elif number_of_fisherman >= 12:
+
+    new_price = price_ship - 25/100 * price_ship
+
+
+if number_of_fisherman % 2 == 0 and season != "Autumn":
+    bonus_price = new_price - 5/100 * new_price
+
+else:
+
+    bonus_price = new_price
+
+money_left = abs(group_budget - bonus_price)
+
+if group_budget >= bonus_price:
+
+    print(f"Yes! You have {money_left:.2f} leva left.")
+
+elif group_budget < bonus_price:
+    print(f"Not enough money! You need {money_left:.2f} leva.")
