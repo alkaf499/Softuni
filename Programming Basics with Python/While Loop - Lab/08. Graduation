@@ -1,0 +1,33 @@
+name_student = str(input())
+
+fail_counter = 0
+year_notes = 0
+year = 1
+
+while year <= 12:
+
+    if fail_counter > 1:
+        break
+
+    grade = float(input())
+
+    if grade < 4:
+        fail_counter += 1
+        continue
+
+    year_notes += grade
+
+    year += 1
+
+
+if fail_counter > 1:
+    print(f"{name_student} has been excluded at {year} grade")
+
+else:
+
+    average = year_notes / 12
+
+    print(f"{name_student} graduated. Average grade: {average:.2f}")
+
+
+
