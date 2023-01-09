@@ -1,0 +1,34 @@
+group_size = int(input())
+i = int(input())
+coins = 0
+
+for i in range(1, i+1):
+
+    if i % 10 == 0:
+        group_size -= 2
+
+    if i % 15 == 0:
+        group_size += 5
+
+    coins += 50
+    coins -= 2 * group_size
+
+    if i % 3 == 0 and i % 5 == 0:
+        coins += 20 * group_size
+        coins -= 5 * group_size
+        continue
+
+    if i % 3 == 0:
+        coins -= 3 * group_size
+
+    if i % 5 == 0:
+        coins += 20 * group_size
+
+
+coins_per_person = coins // group_size
+print(f"{group_size} companions received {coins_per_person} coins each. ")
+
+
+
+
+
