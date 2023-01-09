@@ -1,0 +1,13 @@
+number_n = int(input())
+
+i = 1
+sum = 0
+
+while i <= number_n:
+
+    a = int(input())
+    i  += 1
+    sum = sum + a
+
+else:
+    print(sum)
