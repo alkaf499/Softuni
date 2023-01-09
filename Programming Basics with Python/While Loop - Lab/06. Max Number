@@ -1,0 +1,19 @@
+import sys
+
+line_input = input()
+
+biggest = -sys.maxsize
+
+while line_input != "Stop":
+
+    num = int(line_input)
+
+    if num > biggest:
+
+        biggest = num
+
+
+    line_input = input()
+
+
+print(biggest)
