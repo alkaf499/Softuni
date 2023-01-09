@@ -1,0 +1,58 @@
+hour_of_exam = int(input())
+minute_of_exam = int(input())
+hour_of_arrival = int(input())
+minute_of_arrival = int(input())
+ 
+hour_of_exam_min = hour_of_exam * 60
+hour_of_arrival_min = hour_of_arrival * 60
+ 
+min_exam = hour_of_exam_min + minute_of_exam
+min_arrival = hour_of_arrival_min + minute_of_arrival
+ 
+if min_arrival > min_exam:
+ 
+    print("Late")
+ 
+    if min_arrival - min_exam < 60:
+ 
+        print(f"{min_arrival - min_exam} minutes after the start")
+ 
+    elif min_arrival - min_exam >= 60:
+ 
+        hours_after = (min_arrival - min_exam) // 60
+        minutes_after = (min_arrival - min_exam) % 60
+ 
+        if minutes_after <= 9:
+ 
+         print(f"{hours_after}:0{minutes_after} hours after the start")
+ 
+        else: 
+ 
+         print(f"{hours_after}:{minutes_after} hours after the start")
+ 
+ 
+elif min_arrival == min_exam or min_exam - min_arrival <= 30:
+ 
+    print("On time")
+ 
+    print(f"{min_exam - min_arrival} minutes before the start")
+ 
+elif min_exam - min_arrival > 30:
+ 
+    print("Early")
+ 
+    if min_exam - min_arrival < 60:
+ 
+        print(f"{min_exam - min_arrival} minutes before the start")
+ 
+    elif min_exam - min_arrival >= 60:
+ 
+        hours_after = (min_exam - min_arrival) // 60
+        minutes_after = (min_exam - min_arrival) % 60
+ 
+        if minutes_after <= 9:
+ 
+         print(f"{hours_after}:0{minutes_after} hours before the start")
+ 
+        else:
+         print(f"{hours_after}:{minutes_after} hours before the start")
