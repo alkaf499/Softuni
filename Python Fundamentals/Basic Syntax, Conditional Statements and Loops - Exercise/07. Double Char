@@ -1,0 +1,23 @@
+command = str
+
+while command != "End":
+
+    command = input()
+
+    if command == "End":
+
+        break
+
+    if command == "SoftUni":
+        continue
+
+
+    for letter in command:
+
+        print(2*letter, end="")
+
+    print()
+
+
+
+
