@@ -1,0 +1,28 @@
+petar_budget = float(input())
+number_of_videocards = int(input())
+number_of_processors = int(input())
+number_of_ram = int(input())
+
+videocard_price = 250
+
+videocards_bought_price = number_of_videocards * videocard_price
+
+processor_price = 35 / 100 * videocards_bought_price * number_of_processors
+ram_price = 10 / 100 * videocards_bought_price * number_of_ram
+
+final_price = videocards_bought_price + processor_price + ram_price
+
+if number_of_videocards > number_of_processors:
+
+    final_price = final_price - 15 / 100 * final_price
+
+
+if petar_budget >= final_price:
+
+    leva_left = abs(petar_budget - final_price)
+
+    print(f"You have {leva_left:.2f} leva left!")
+
+elif petar_budget < final_price:
+    leva_left = abs(petar_budget - final_price)
+    print(f"Not enough money! You need {leva_left:.2f} leva more!")
