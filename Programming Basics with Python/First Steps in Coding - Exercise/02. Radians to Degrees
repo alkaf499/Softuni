@@ -1,0 +1,6 @@
+from math import pi
+from math import floor
+
+Angle_in_radians = float(input())
+degrees = Angle_in_radians * 180  / pi
+print(degrees)
