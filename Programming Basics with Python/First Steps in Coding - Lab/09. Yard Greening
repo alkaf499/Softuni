@@ -1,0 +1,11 @@
+square_meters = float(input())
+price_square_meters = 7.61
+price_discount = 18/100
+
+
+Total_discount = square_meters * price_square_meters * price_discount
+
+Final_sum_with_discount = square_meters * price_square_meters - Total_discount
+
+print(f"The final price is {Final_sum_with_discount} lv.")
+print(f"The discount is: {Total_discount} lv.")
