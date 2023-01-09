@@ -1,0 +1,5 @@
+USD = float(input())
+
+USD_to_Lev = USD * 1.79549
+
+print(USD_to_Lev)
