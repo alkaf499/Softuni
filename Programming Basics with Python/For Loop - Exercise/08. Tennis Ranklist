@@ -1,0 +1,45 @@
+import math
+
+number_of_tournaments = int(input())
+starting_points = int(input())
+
+points = 0
+won = 0
+
+for ppl in range(1, number_of_tournaments+1):
+
+    ppl += 1
+
+    tour_stage = str(input())
+
+    if  tour_stage == "W":
+
+        won += 1
+
+        points += 2000
+
+    elif tour_stage == "F":
+
+        points += 1200
+
+    elif tour_stage == "SF":
+
+        points += 720
+
+points = points + starting_points
+
+average_points = math.floor((points - starting_points) / number_of_tournaments)
+tour_won = won / number_of_tournaments * 100
+
+print(f"Final points: {points}")
+print(f"Average points: {average_points}")
+print(f"{tour_won:.2f}%")
+
+
+
+
+
+
+
+
+
