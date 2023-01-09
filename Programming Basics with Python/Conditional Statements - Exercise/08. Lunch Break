@@ -1,0 +1,22 @@
+tv_series_name = str(input())
+duration_of_series = int(input())
+duration_of_break = int(input())
+
+import math
+
+lunch_time = 1/8 * duration_of_break
+rest_time = 1/4 * duration_of_break
+
+
+time_left_for_tv = (duration_of_break - (lunch_time + rest_time))
+
+time_left = math.ceil(abs(time_left_for_tv - duration_of_series))
+
+if time_left_for_tv >= duration_of_series:
+
+    print((f"You have enough time to watch {tv_series_name} and left with {time_left} minutes free time. "))
+
+elif time_left_for_tv < duration_of_series:
+
+
+    print(f"You don't have enough time to watch {tv_series_name}, you need {time_left} more minutes.")
