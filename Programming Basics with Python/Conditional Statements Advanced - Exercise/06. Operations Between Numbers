@@ -1,0 +1,42 @@
+N1 = int(input())
+N2 = int(input())
+operator = str(input())
+
+if operator == "+" or operator == "-" or operator == "*":
+    if operator == "+":
+        fin = N1 + N2
+
+    elif operator == "-":
+        fin = N1 - N2
+
+    elif operator == "*":
+
+        fin = N1*N2
+
+    if fin % 2 == 0:
+        even_or_odd = "even"
+
+    else:
+
+        even_or_odd = "odd"
+
+    print (f"{N1} {operator} {N2} = {fin} - {even_or_odd} ")
+
+elif operator == "/" or operator == "%":
+
+    if N2 == 0:
+
+        print(f"Cannot divide {N1} by zero")
+
+    elif operator == "/":
+        
+        fin = N1 / N2
+
+        print(f"{N1} {operator} {N2} = {fin:.2f}")
+
+    else:
+
+        fin = N1 % N2
+
+        print(f"{N1} {operator} {N2} = {fin}")
+
