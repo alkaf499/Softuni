@@ -1,0 +1,25 @@
+number_mess_sent = int(input())
+
+i = 0
+
+while i < number_mess_sent:
+
+    n_numbers = int(input())
+
+    i += 1
+
+    if n_numbers == 88:
+
+        print("Hello")
+
+    elif n_numbers == 86:
+
+        print("How are you?")
+
+    elif n_numbers < 88 and n_numbers!= 86:
+
+        print("GREAT!")
+
+    elif n_numbers > 88:
+
+        print("Bye.")
