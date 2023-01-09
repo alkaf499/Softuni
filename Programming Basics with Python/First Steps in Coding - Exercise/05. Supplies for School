@@ -1,0 +1,14 @@
+numbers_of_stylos = int(input())
+numbers_of_markers = int(input())
+litres_cleaning = int(input())
+pourcent_deduction = int(input())
+
+packets_stylos = 5.80
+packets_markers = 7.20
+cleaning_agent_per_liter = 1.20
+
+total_sum_without_deduction = numbers_of_stylos * packets_stylos + numbers_of_markers * packets_markers + litres_cleaning * cleaning_agent_per_liter
+deduction = total_sum_without_deduction * pourcent_deduction / 100
+final_sum = total_sum_without_deduction - deduction
+
+print(final_sum)
