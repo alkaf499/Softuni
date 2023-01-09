@@ -1,0 +1,22 @@
+import sys
+n = int(input())
+
+happy = False
+
+while not happy:
+    n += 1
+    conv = set(str(n))
+
+    if len(str(n)) == len(set(conv)):
+        print(n)
+        happy = True
+
+
+
+
+
+
+
+
+
+
