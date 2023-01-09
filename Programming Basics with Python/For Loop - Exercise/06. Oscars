@@ -1,0 +1,30 @@
+name_actor = str(input())
+academy_points = float(input())
+jury_number = int(input())
+
+score = academy_points
+
+for i in range(1, jury_number + 1):
+
+    name_jury = str(input())
+    points_jury = float(input())
+
+    score += (len(name_jury) * points_jury)/2
+
+    if score > 1250.5:
+        break
+
+if score > 1250.5:
+
+    print(f"Congratulations, {name_actor} got a nominee for leading role with {score:.1f}!")
+
+else:
+
+    sum = abs(score - 1250.5)
+
+    print(f"Sorry, {name_actor} you need {sum:.1f} more!")
+
+
+
+
+
