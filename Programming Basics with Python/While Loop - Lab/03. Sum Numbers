@@ -1,0 +1,21 @@
+primary_number = int(input())
+
+sum = 0
+
+while True:
+
+    to_numbers = int(input())
+
+    sum += to_numbers
+
+    if sum >= primary_number:
+        break
+
+print(sum)
+
+
+
+
+
+
+
