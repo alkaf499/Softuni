@@ -1,0 +1,31 @@
+x_cake = int(input())
+y_cake = int(input())
+
+piece_of_cake = 1
+cake_taken = 0
+cake_size = x_cake * y_cake
+
+while True:
+
+    number_of_pieces = input()
+
+    if number_of_pieces == "STOP":
+
+        diff = abs(cake_size - cake_taken)
+        print(f"{diff} pieces are left.")
+
+        break
+
+    cake_taken += int(number_of_pieces)
+
+    if cake_taken > cake_size:
+
+        diff = abs(cake_size - cake_taken)
+        print(f"No more cake left! You need {diff} pieces more.")
+        break
+
+
+
+
+
+
