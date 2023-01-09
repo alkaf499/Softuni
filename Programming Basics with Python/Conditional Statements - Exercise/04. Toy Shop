@@ -1,0 +1,35 @@
+excursion_price = float(input())
+number_of_puzzles = int(input())
+number_of_dolls = int(input())
+number_of_bears = int(input())
+number_of_minions = int(input())
+number_of_trucks = int(input())
+
+puzzles = 2.60
+dolls = 3
+bears = 4.10
+minions = 8.20
+trucks = 2
+
+number_of_orders = number_of_minions + number_of_bears + number_of_dolls + number_of_trucks + number_of_puzzles
+
+price_of_order = minions * number_of_minions + trucks * number_of_trucks + dolls * number_of_dolls + puzzles * number_of_puzzles + bears * number_of_bears
+
+if number_of_orders >= 50:
+
+    final_price = price_of_order - 25/100 * price_of_order
+
+else:
+    final_price = price_of_order
+
+store_rent = 10/100 * final_price
+
+net_cash = final_price - store_rent
+
+if net_cash >= excursion_price:
+    money_left = abs(excursion_price - net_cash)
+    print(f"Yes! {money_left:.2f} lv left.")
+
+elif net_cash < excursion_price:
+    money_needed = abs(excursion_price - net_cash)
+    print(f"Not enough money! {money_needed:.2f} lv needed.")
