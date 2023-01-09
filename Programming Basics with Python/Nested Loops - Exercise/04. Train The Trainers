@@ -1,0 +1,38 @@
+number_of_jury = int(input())
+
+total = 0
+
+counter = 0
+
+sum_for_average = 0
+
+while True:
+
+    presentation_name = input()
+    if presentation_name == "Finish":
+        break
+
+    counter += 1
+
+    for i in range (1, number_of_jury + 1):
+        scores = float(input())
+        total += scores
+
+        if i == number_of_jury:
+            print(f"{presentation_name} - {total / number_of_jury:.2f}.")
+            sum_for_average += total
+            total = 0
+            break
+
+
+average = counter * number_of_jury
+final = sum_for_average / average
+
+print(f"Student's final assessment is {final:.2f}.")
+
+
+
+
+
+
+
