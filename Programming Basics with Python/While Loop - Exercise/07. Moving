@@ -1,0 +1,33 @@
+x_space = int(input())
+y_space = int(input())
+z_space = int(input())
+
+
+piece = 1
+occupied_space = 0
+room_size = x_space * y_space * z_space
+
+while True:
+
+    number_of_pieces = input()
+
+    if number_of_pieces == "Done":
+
+        diff = abs(room_size - occupied_space)
+        print(f"{diff} Cubic meters left.")
+
+        break
+
+    occupied_space += int(number_of_pieces)
+
+    if occupied_space > room_size:
+
+        diff = abs(room_size - occupied_space)
+        print(f"No more free space! You need {diff} Cubic meters more.")
+        break
+
+
+
+
+
+
