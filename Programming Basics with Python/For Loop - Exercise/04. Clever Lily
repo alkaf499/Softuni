@@ -1,0 +1,45 @@
+Lili_age = int(input())
+washer_price = float(input())
+price_per_toy = int(input())
+
+n = 0
+number_toys = 0
+money_bd = 0
+
+for age in range (1, Lili_age+1):
+
+    if age % 2 == 0:
+
+        n += 1
+
+
+    else:
+
+        number_toys += 1
+
+
+
+money_bd = ((n / 2) * (10 + 10 * n)) - n
+
+money_toys = number_toys * price_per_toy
+
+total_money = money_toys + money_bd
+
+diff_left = abs(total_money - washer_price)
+
+if total_money >= washer_price:
+
+    print(f"Yes! {diff_left:.2f}")
+
+else:
+
+    print(f"No! {diff_left:.2f}")
+
+
+
+
+
+
+
+
+
