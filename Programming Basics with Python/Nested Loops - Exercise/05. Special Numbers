@@ -1,0 +1,43 @@
+n = int(input())
+
+flag = True
+
+
+for i in range(1111, 9999 + 1):
+
+    digit1 = i % 10
+    number1 = i // 10
+
+    digit2 = number1 % 10
+    number2 = number1 // 10
+
+    digit3 = number2 % 10
+    number3 = number2 // 10
+
+    digit4 = number3 % 10
+    number4 = number3 // 10
+
+
+    if digit1 != 0 and digit2 != 0 and digit4 != 0 and digit3 != 0 and n % digit1 == 0 and n % digit2 == 0 and n % digit3 == 0 and n % digit4 == 0:
+
+        print(i, end=" ")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
