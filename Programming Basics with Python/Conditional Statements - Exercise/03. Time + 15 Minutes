@@ -1,0 +1,26 @@
+hours = int(input())
+minutes = int(input())
+
+minutes_15 = minutes + 15
+
+hours_in_minutes = hours * 60
+
+total_minutes = hours_in_minutes + minutes_15
+
+hours_new = total_minutes // 60
+
+minutes_new = total_minutes % 60
+
+if hours_new == 24 and minutes_new < 10:
+    hours_new = 0
+    print(f"{hours_new:g}:0{minutes_new:g}")
+
+elif hours_new == 24:
+    hours_new = 0
+    print(f"{hours_new:g}:{minutes_new:g}")
+
+elif minutes_new < 10:
+
+    print(f"{hours_new:g}:0{minutes_new:g}")
+
+else: print(f"{hours_new:g}:{minutes_new:g}")
