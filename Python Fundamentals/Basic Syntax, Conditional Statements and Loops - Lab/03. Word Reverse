@@ -1,0 +1,5 @@
+word = input()
+
+reversedword = ''.join(reversed(word))
+
+print(reversedword)
