@@ -1,0 +1,23 @@
+nylon = 1.50 # per square meter
+paint = 14.50 # per liter
+daluter = 5.00 # per liter
+bag = 0.40 # per piece
+
+nylon_sq_meter = int(input())
+paint_in_leters = int(input())
+daluter_per_liter = int(input())
+work_hours = int(input())
+
+final_paint = (paint_in_leters + paint_in_leters * 10/100 ) * paint
+
+final_nylon = ( nylon_sq_meter + 2 ) * nylon
+
+final_daluter = daluter_per_liter * daluter
+
+Material_sum = final_nylon + final_paint +  bag + final_daluter
+
+work_hour = 30/100 * Material_sum * work_hours
+
+Final_sum =  Material_sum + work_hour
+
+print(Final_sum)
