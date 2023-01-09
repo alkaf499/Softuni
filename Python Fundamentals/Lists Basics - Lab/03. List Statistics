@@ -1,0 +1,24 @@
+n = int(input())
+
+list_positive = []
+list_negative = []
+
+sum_negatives = 0
+
+for i in range(n):
+    course = int(input())
+
+    if course >= 0:
+        list_positive.append(course)
+
+    elif course < 0:
+        list_negative.append(course)
+        sum_negatives += course
+
+
+print(list_positive)
+print(list_negative)
+
+print(f"Count of positives: {len(list_positive)}")
+print(f"Sum of negatives: {sum_negatives}")
+
