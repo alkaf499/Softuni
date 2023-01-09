@@ -1,0 +1,17 @@
+n = int(input())
+test_word = input()
+
+all_list = []
+filtered = []
+
+for i in range(n):
+
+    words = input()
+    all_list.append(words)
+    filtered = [match for match in all_list if test_word in match]
+
+print(all_list)
+print(filtered)
+
+
+
