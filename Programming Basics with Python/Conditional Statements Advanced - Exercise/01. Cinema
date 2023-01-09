@@ -1,0 +1,23 @@
+type_projection = str(input())
+rows = int(input())
+colums = int(input())
+
+capacity = rows * colums
+
+if type_projection == "Premiere":
+
+    income = capacity * 12.00
+
+elif type_projection == "Normal":
+
+    income = capacity * 7.50
+
+elif type_projection == "Discount":
+
+    income = capacity * 5.00
+
+price_income = "{:.2f}".format(income)
+
+print(price_income)
+
+
