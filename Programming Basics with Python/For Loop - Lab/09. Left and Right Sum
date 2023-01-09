@@ -1,0 +1,50 @@
+number_n = int(input())
+
+import sys
+
+
+left_sum = 0
+right_sum = 0
+
+
+
+for i in range(1 , number_n + 1):
+
+    left_sum = left_sum + int(input())
+
+
+
+for i in range(number_n, 2 * number_n ):
+
+    right_sum = right_sum + int(input())
+
+
+
+if left_sum == right_sum:
+
+    print(f"Yes, sum = {left_sum}")
+
+elif left_sum != right_sum:
+
+    diff = abs(left_sum - right_sum)
+
+    print(f"No, diff = {diff}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
