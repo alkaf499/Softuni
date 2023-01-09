@@ -1,0 +1,21 @@
+numb = input().split()
+to_remove = int(input())
+new = []
+removed = 0
+
+for i in numb:
+    new.append(int(i))
+
+while removed < to_remove:
+    removed += 1
+    lowest = min(new)
+    new.remove(lowest)
+
+print(*new, sep=", ")
+
+
+
+
+
+
+
