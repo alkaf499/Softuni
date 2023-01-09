@@ -1,0 +1,47 @@
+command = str
+
+coffee_counter = 0
+
+while command != "END":
+
+    command = input()
+
+    if command == "cat":
+
+        coffee_counter += 1
+
+    elif command == "CAT":
+
+        coffee_counter += 2
+
+    elif command == "dog":
+        coffee_counter += 1
+
+    elif command == "DOG":
+        coffee_counter += 2
+
+    elif command == "coding":
+        coffee_counter += 1
+
+    elif command == "CODING":
+        coffee_counter += 2
+
+    elif command == "movie":
+        coffee_counter += 1
+
+    elif command == "MOVIE":
+        coffee_counter += 2
+
+    else:
+
+        continue
+
+
+if coffee_counter > 5:
+
+    print("You need extra sleep")
+
+else:
+
+    print(coffee_counter)
+
