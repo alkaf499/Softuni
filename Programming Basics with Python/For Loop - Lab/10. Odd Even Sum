@@ -1,0 +1,29 @@
+number_n = int(input())
+
+a = 0
+i = 0
+sum_even = 0
+sum_odd = 0
+
+
+for i in range(0, number_n):
+
+    a = int(input())
+    i += 1
+
+    if i % 2 == 0:
+
+        sum_even += a
+    elif i % 2 != 0:
+
+        sum_odd += a
+
+if sum_odd == sum_even:
+
+    print("Yes")
+    print(f"Sum = {sum_odd}")
+
+elif sum_odd != sum_even:
+    diff = abs(sum_odd - sum_even)
+    print("No")
+    print(f"Diff = {diff}")
