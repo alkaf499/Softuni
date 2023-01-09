@@ -1,0 +1,14 @@
+chicken_menu = 10.35
+fish_menu = 12.40
+vege_manu = 8.15
+delivery = 2.50
+
+number_chicken_menus = int(input())
+number_fish_menus = int(input())
+number_vege_menus = int(input())
+
+desert = ( number_chicken_menus* chicken_menu + number_fish_menus*fish_menu + vege_manu*number_vege_menus ) * 20/100
+
+Final_sum = number_chicken_menus* chicken_menu + number_fish_menus*fish_menu + vege_manu*number_vege_menus + desert + delivery
+
+print(Final_sum)
