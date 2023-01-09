@@ -1,0 +1,21 @@
+number_n = int(input())
+
+import sys
+
+biggest = -sys.maxsize
+smallest = sys.maxsize
+
+for i in range(0, number_n):
+
+    a = int(input())
+    i += 1
+
+    if a > biggest:
+         biggest = a
+
+    if a < smallest:
+        smallest = a
+
+
+print(f"Max number: {biggest}")
+print(f"Min number: {smallest}")
