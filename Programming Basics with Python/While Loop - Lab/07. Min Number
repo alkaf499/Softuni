@@ -1,0 +1,19 @@
+import sys
+
+line_input = input()
+
+smallest = sys.maxsize
+
+while line_input != "Stop":
+
+    num = int(line_input)
+
+    if num < smallest:
+
+        smallest = num
+
+
+    line_input = input()
+
+
+print(smallest)
