@@ -1,0 +1,35 @@
+flowers = input()
+peaces = int(input())
+budget = float(input())
+total = 0
+
+if flowers == "Roses":
+    if peaces > 80:
+        total = (peaces * 5)*0.9
+    else: 
+        total = peaces * 5
+if flowers == "Dahlias":
+    if peaces > 90:
+        total = (peaces * 3.8)*0.85
+    else:
+        total = peaces * 3.8
+if flowers == "Tulips":
+    if peaces > 80:
+        total = (peaces * 2.8)*0.85
+    else:
+        total = peaces * 2.8
+if flowers == "Narcissus":
+    if peaces < 120:
+        total = peaces * 3 + (peaces * 3)*0.15
+    else:
+        total = peaces * 3
+if flowers == "Gladiolus":
+    if peaces < 80:
+        total = peaces * 2.5 + (peaces * 2.5)*0.2
+    else:
+        total = peaces * 2.5
+
+if budget >= total:
+    print(f"Hey, you have a great garden with {peaces} {flowers} and {(budget - total):.2f} leva left.")
+elif budget < total:
+    print(f"Not enough money, you need {abs(budget - total):.2f} leva more.")
