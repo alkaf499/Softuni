@@ -1,0 +1,53 @@
+days = int(input())
+accomodation_type = str(input())
+review_score = str(input())
+
+nights = days - 1
+
+room_for_one_person = 18
+apartment = 25
+president_apartment = 35
+
+if accomodation_type == "room for one person":
+
+    price = room_for_one_person * nights
+
+elif accomodation_type == "apartment":
+
+    if days < 10:
+
+        price = apartment * nights - 30/100 * apartment * nights
+
+    elif 10 <= days <= 15:
+
+        price = apartment * nights - 35 / 100 * apartment * nights
+
+    elif days > 15:
+
+        price = apartment * nights - 50 / 100 * apartment * nights
+
+elif accomodation_type == "president apartment":
+
+    if days < 10:
+
+        price = president_apartment * nights - 10 / 100 * president_apartment * nights
+
+    elif 10 <= days <= 15:
+
+        price = president_apartment * nights - 15 / 100 * president_apartment * nights
+
+    elif days > 15:
+
+        price = president_apartment * nights - 20 / 100 * president_apartment * nights
+
+if review_score == "positive":
+
+    price = price + 25/100 * price
+
+elif review_score == "negative":
+
+    price = price - 10 / 100 * price
+
+
+print(f"{price:.2f}")
+
