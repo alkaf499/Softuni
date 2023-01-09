@@ -1,0 +1,30 @@
+number_of_orders = int(input())
+
+all_orders = 0
+
+for i in range(number_of_orders):
+
+    price_per_capsule = float(input())
+    days = int(input())
+    capsuls_needed_per_day = int(input())
+
+
+    if price_per_capsule < 0.01 or price_per_capsule > 100:
+
+        continue
+
+    elif days < 1 or days > 31:
+
+        continue
+    elif capsuls_needed_per_day < 1 or capsuls_needed_per_day > 2000:
+
+        continue
+
+    total_order = price_per_capsule * days * capsuls_needed_per_day
+
+    all_orders += total_order
+
+
+    print(f"The price for the coffee is: ${total_order:.2f}")
+
+print(f"Total: ${all_orders:.2f}")
