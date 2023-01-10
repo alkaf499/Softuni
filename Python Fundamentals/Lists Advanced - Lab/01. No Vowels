@@ -1,0 +1,16 @@
+sent = input()
+
+vowels = ['a', 'o', 'u', 'e', 'i']
+new = [i for i in sent if i.lower() not in vowels]
+
+print("".join(new))
+
+
+
+
+
+
+
+
+
+
