@@ -1,0 +1,21 @@
+order = input()
+
+quantity = int(input())
+
+def result(orders, quantities):
+
+    coffee = 1.50
+    water = 1.00
+    coke = 1.40
+    snacks = 2.00
+
+    if orders == "coffee":
+        return coffee * quantities
+    if orders == "water":
+        return water * quantities
+    if orders == "coke":
+        return coke * quantities
+    if orders == "snacks":
+        return snacks * quantities
+
+print(f"{result(order, quantity):.2f}")
