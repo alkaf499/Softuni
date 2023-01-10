@@ -1,0 +1,16 @@
+class Catalogue:
+    def __init__(self, name):
+        self.name = str(name)
+        self.products = []
+
+    def add_product(self, product_name):
+        self.products.append(product_name)
+
+    def get_by_letter(self,first_letter):
+        first_letter_list = [first for first in self.products if first[0].lower() == first_letter.lower()]
+        return first_letter_list
+
+    def __repr__(self):
+        a_for_return = f"Items in the {self.name} catalogue:\n"
+        a_for_return += '\n'.join(sorted(self.products))
+        return a_for_return
