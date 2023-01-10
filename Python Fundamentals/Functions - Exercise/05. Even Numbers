@@ -1,0 +1,10 @@
+def even(arg):
+
+    if arg % 2 == 0:
+        return True
+
+enter = list(map( int, input().split(" ")))
+even_number = filter(even, enter)
+even_numbers = list(even_number)
+
+print(even_numbers)
