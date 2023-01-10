@@ -1,0 +1,38 @@
+n_of_wagons = int(input())
+wagons = [0]*n_of_wagons
+
+while True:
+
+    command = input()
+    action = command.split()[0]
+
+    if action == "End":
+        print(wagons)
+        break
+
+    if action == "add":
+        ppl_to_add = command.split()[1]
+        wagons[-1] += int(ppl_to_add)
+
+    if action == "insert":
+        index_1 = int(command.split()[1])
+        pp_to_add = command.split()[2]
+        wagons[index_1] += int(pp_to_add)
+
+    if action == "leave":
+        index_2 = int(command.split()[1])
+        pp_to_add = command.split()[2]
+        wagons[index_2] -= int(pp_to_add)
+
+
+
+
+
+
+
+
+
+
+
+
+
