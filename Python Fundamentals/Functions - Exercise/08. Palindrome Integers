@@ -1,0 +1,11 @@
+def palindrome(tocheck):
+    for i in tocheck:
+        if i == i[::-1]:
+            print("True")
+        else:
+            print("False")
+
+
+number = input().split(", ")
+
+palindrome(number)
