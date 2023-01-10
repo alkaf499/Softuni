@@ -1,0 +1,23 @@
+def operations( todo, numb1, numb2 ):
+    result = 0
+
+    if todo == "multiply":
+        result = numb1 * numb2
+
+    if todo == "divide":
+        result = numb1 // numb2
+        
+    if todo == "add":
+        result = numb1 + numb2
+
+    if todo == "subtract":
+        result = numb1 - numb2
+
+    return result
+
+operators = input()
+f_num = int(input())
+s_num = int(input())
+
+print(operations(operators, f_num, s_num))
+
