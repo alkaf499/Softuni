@@ -1,0 +1,16 @@
+notes = [0]*10
+
+while True:
+    command = input()
+
+    if command == "End":
+        break
+
+    data = command.split("-")
+    importance = int(data[0])-1
+    note = data[1]
+    notes.pop(importance)
+    notes.insert(importance, note)
+    notes_final = [i for i in notes if i != 0]
+
+print(notes_final)
