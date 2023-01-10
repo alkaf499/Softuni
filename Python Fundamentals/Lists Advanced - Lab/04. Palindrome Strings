@@ -1,0 +1,11 @@
+pali = input().split(" ")
+to_check = input()
+is_palindrome = []
+counter = pali.count(to_check)
+
+[is_palindrome.append(i) for i in pali if i == i[::-1]]
+
+print(is_palindrome)
+print(f"Found palindrome {counter} times")
+
+
