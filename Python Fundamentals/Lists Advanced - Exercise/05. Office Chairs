@@ -1,0 +1,29 @@
+number_rooms = int(input())
+i = 1
+sum_free = 0
+counter = 0
+while i <= number_rooms:
+
+    chairs_visitors = input().split(" ")
+    i += 1
+    sum_not = 0
+    chair = chairs_visitors[0]
+    visitors = chairs_visitors[1]
+    left_or_not = len(chair) - int(visitors)
+
+    if left_or_not >= 0:
+        sum_free += left_or_not
+    elif left_or_not < 0:
+        sum_not += left_or_not
+        counter += 1
+        print(f"{abs(sum_not)} more chairs needed in room {i-1}")
+
+if counter == 0:
+    print(f"Game On, {sum_free} free chairs left")
+
+
+
+
+
+
+
