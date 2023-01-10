@@ -1,0 +1,14 @@
+vhod = input().split(", ")
+new = []
+zer = []
+counter = 0
+
+for i in vhod:
+    new.append(int(i))
+
+for a in new[:]:
+    if a == 0:
+        zer.append(a)
+        new.remove(a)
+
+print(new+zer)
