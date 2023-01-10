@@ -1,0 +1,18 @@
+seq1 = list(input().split(", "))
+seq2 = list(input().split(", "))
+result = []
+unique = []
+
+for i in seq1:
+    for j in seq2:
+        if i in j:
+            result.append(i)
+
+for x in result:
+    if x not in unique:
+        unique.append(x)
+
+print(unique)
+
+
+
