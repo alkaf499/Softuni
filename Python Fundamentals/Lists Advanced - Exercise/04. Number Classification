@@ -1,0 +1,16 @@
+number = list(map(int, input().split(", ")))
+
+positive = []
+negative = []
+even = []
+odd =[]
+
+[positive.append(i) for i in number if i >= 0]
+[negative.append(i) for i in number if i < 0]
+[even.append(i) for i in number if i % 2 == 0 or i == 0]
+[odd.append(i) for i in number if i % 2 != 0]
+
+print(f"Positive: {', '.join(str(x) for x in positive)}")
+print(f"Negative: {', '.join(str(x) for x in negative)}")
+print(f"Even: {', '.join(str(x) for x in even)}")
+print(f"Odd: {', '.join(str(x) for x in odd)}")
