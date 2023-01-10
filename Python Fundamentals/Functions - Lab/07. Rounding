@@ -1,0 +1,12 @@
+numb = list(map(float, input().split(" ")))
+
+def area(a):
+    new = []
+
+    for i in numb:
+        new.append(round(i))
+    
+    return new
+
+print(area(numb))
+
