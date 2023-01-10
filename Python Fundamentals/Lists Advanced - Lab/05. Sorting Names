@@ -1,0 +1,3 @@
+names = input().split(", ")
+names.sort(key=lambda el: (-len(el), el))
+print(names)
