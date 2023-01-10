@@ -1,0 +1,8 @@
+numbers = list(map(float, input().split(" ")))
+
+def abs_value(num):
+    result = [abs(num) for num in numbers]
+    return print(result)
+
+abs_value(numbers)
+    
