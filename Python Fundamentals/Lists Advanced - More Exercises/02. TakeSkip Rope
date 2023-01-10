@@ -1,0 +1,30 @@
+import itertools
+
+secret = list(input().split(" "))
+
+for char in secret:
+    final = []
+    numbers_list = []
+    non_numbers = []
+    result = []
+
+    for element in char:
+        if element.isdigit():
+            numbers_list.append(element)
+        else:
+            non_numbers.append(element)
+
+    take_list = numbers_list[::2]
+    skip_list = numbers_list[1::2]
+    result = []
+    skippen = []
+
+    for a, j in zip(take_list, skip_list):
+
+        result.append(non_numbers[:int(a)])
+        non_numbers = non_numbers[int(a):]
+        skippen.append(non_numbers[:int(j)])
+        non_numbers = non_numbers[int(j):]
+
+    final = [x for xs in result for x in xs]
+    print("".join(final))
