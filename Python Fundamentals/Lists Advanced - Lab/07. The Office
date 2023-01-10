@@ -1,0 +1,15 @@
+happines = list(map(int, input().split(" ")))
+factor = int(input())
+counter = 0
+new_list = [i*factor for i in happines]
+average = (sum(new_list) // len(new_list))
+
+for i in new_list:
+    if i > average:
+        counter += 1
+
+if counter >= len(new_list) // 2:
+    print(f"Score: {counter}/{len(new_list)}. Employees are happy!")
+else:
+    print(f"Score: {counter}/{len(new_list)}. Employees are not happy!")
+
