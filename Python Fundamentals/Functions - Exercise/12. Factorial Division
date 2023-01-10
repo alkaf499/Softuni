@@ -1,0 +1,12 @@
+import math
+
+def storel(orput = int(input()), arput = int(input())):
+    n1 = math.factorial(orput)
+    n2 = math.factorial(arput)
+    resultat = n1 // n2
+    return resultat
+
+result = storel()
+
+print(f"{result:.2f}")
+
