@@ -1,0 +1,9 @@
+number_list = list(map(int, input().split(", ")))
+
+found_or_not = map(
+    lambda x: x if number_list[x] % 2 == 0 else "no",
+    range(len(number_list))
+)
+
+ev_indices = list(filter(lambda a: a != "no", found_or_not))
+print(ev_indices)
