@@ -1,0 +1,15 @@
+population = list(map(int, input().split(", ")))
+min_wealth = int(input())
+
+for i in range(len(population)):
+    wealthiest = max(population)
+    index = population.index(wealthiest)
+
+    while population[i] < min_wealth and wealthiest > min_wealth:
+        population[i] += 1
+        population[index] -= 1
+
+if sum(population) // len(population) >= min_wealth:
+    print(population)
+else:
+    print("No equal distribution possible")
