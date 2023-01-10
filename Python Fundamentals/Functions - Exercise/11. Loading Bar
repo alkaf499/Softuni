@@ -1,0 +1,16 @@
+def bar(number):
+
+    if number != 100:
+        n = number // 10
+        rest = 10 - n
+        print(number,'%',' ','[','%'*n, '.'* rest, ']', sep="")
+        print("Still loading...")
+
+    elif number == 100:
+        print("100% Complete!")
+        print('[', '%' * 10, ']', sep="")
+
+
+percent = int(input())
+
+bar(percent)
