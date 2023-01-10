@@ -1,0 +1,30 @@
+secret = input().split(" ")
+final_message = []
+for char in secret:
+    new = ""
+    current_message = ""
+    for element in char:
+        if element.isdigit():
+            new += element
+        else:
+            break
+
+    char = char.replace(new, '')
+    new = int(new)
+    current_message += chr(new)
+    if len(char) >= 2:
+        char = char[-1] + char[1:-1] + char[0]
+    current_message += char
+    final_message.append(current_message)
+
+print(" ".join(final_message))
+
+
+
+
+
+
+
+
+
+
