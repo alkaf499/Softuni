@@ -1,0 +1,9 @@
+def sorting(coming):
+
+    print(sorted(coming))
+    return coming
+
+number = list(map(int, input().split(" ")))
+result = sorting(number)
+
+
