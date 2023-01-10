@@ -1,0 +1,14 @@
+def ascii_in_range(start, end):
+    new = []
+
+    for i in range(ord(start) + 1, ord(end)):
+        new.append(chr(i))
+
+    return new
+
+
+start = input()
+end = input()
+
+result = ascii_in_range(start, end)
+print(" ".join(result))
