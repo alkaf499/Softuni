@@ -1,0 +1,12 @@
+num = list(map(int, input().split(", ")))
+boundary = 0
+
+while len(num) != 0:
+    boundary += 10
+    removed = [i for i in num if i <= boundary]
+    print(f"Group of {boundary}'s: {removed}")
+
+    for i in removed[:]:
+        if i in num:
+            num.remove(i)
+            removed.remove(i)
