@@ -1,0 +1,7 @@
+int1 = int(input())
+int2 = int(input())
+int3 = int(input())
+
+result = lambda a, b, c: min(a, b, c)
+
+print(result(int1, int2, int3))
