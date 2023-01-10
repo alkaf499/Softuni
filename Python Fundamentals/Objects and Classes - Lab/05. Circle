@@ -1,0 +1,16 @@
+class Circle:
+    pi = 3.14
+
+    def __init__(self, diameter):
+        self.diameter = diameter
+        self.r = diameter/2
+
+    def calculate_circumference(self):
+        return self.r * (2 * self.pi)
+
+    def calculate_area(self):
+        return self.pi * (self.r ** 2)
+
+    def calculate_area_of_sector(self, angle):
+        return (((self.r ** 2) * angle)/2) * (self.pi/180)
+
