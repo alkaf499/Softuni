@@ -1,0 +1,17 @@
+def sum_numbers(one, two):
+    return one + two
+
+def subtract(suma, third):
+    return suma - third
+
+
+def add_and_subtract(first, second, third):
+    sum_of_two = sum_numbers(first, second)
+    sub_from_sum = subtract(sum_of_two, third)
+    return sub_from_sum
+
+int1 = int(input())
+int2 = int(input())
+int3 = int(input())
+
+print(add_and_subtract(int1, int2, int3))
