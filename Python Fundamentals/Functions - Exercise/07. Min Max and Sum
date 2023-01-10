@@ -1,0 +1,21 @@
+def smallest(some_numbers):
+    return min(some_numbers)
+
+def biggest(bigger):
+    return max(bigger)
+
+def all(all):
+    lowest = smallest(all)
+    big = biggest(all)
+    sumarno = 0
+
+    for i in all:
+        sumarno += i
+
+    print(f"The minimum number is {lowest}")
+    print(f"The maximum number is {big}") 
+    print(f"The sum number is: {sumarno}")
+
+enter = list(map( int, input().split(" ")))
+
+result = all(enter)
