@@ -1,0 +1,18 @@
+single_string = input()
+digits = []
+letters = []
+other = []
+
+for i in single_string:
+    if i.isdigit():
+        digits.append(i)
+    elif i.isalpha():
+        letters.append(i)
+    else:
+        other.append(i)
+
+print(''.join(digits))
+print(''.join(letters))
+print(''.join(other))
+
+
