@@ -1,0 +1,11 @@
+command = input()
+to_be_reversed = {}
+
+while command != "end":
+    reversed = command[::-1]
+    to_be_reversed[command] = reversed
+    
+    command = input()
+
+for k,v in to_be_reversed.items():
+    print(f"{k} = {v}")
