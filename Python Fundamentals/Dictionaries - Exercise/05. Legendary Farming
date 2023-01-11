@@ -1,0 +1,53 @@
+essential_materials = {'shards': 0, 'fragments': 0, 'motes': 0}
+junk_material = {}
+command = input().split()
+obtained = False
+while True:
+
+    for index in range(0, len(command), 2):
+
+        value = int(command[index])
+        key = command[index+1].lower()
+
+        if key == 'shards' or key == "fragments" or key ==  "motes":
+            essential_materials[key] += value
+        else:
+            if key not in junk_material.keys():
+                junk_material[key] = value
+            else:
+                junk_material[key] += value
+
+        if essential_materials['shards'] >= 250:
+            print("Shadowmourne obtained!")
+            obtained = True
+            essential_materials['shards'] -= 250
+
+        elif essential_materials['fragments'] >= 250:
+            print("Valanyr obtained!")
+            obtained = True
+            essential_materials['fragments'] -= 250
+
+        elif essential_materials['motes'] >= 250:
+            print("Dragonwrath obtained!")
+            obtained = True
+            essential_materials['motes'] -= 250
+
+        if obtained:
+            break
+    if obtained:
+        break
+
+    command = input().split()
+
+for k,v in essential_materials.items():
+            print(f"{k}: {v}")
+for k,v in junk_material.items():
+            print(f"{k}: {v}")
+
+
+
+
+
+
+
+
