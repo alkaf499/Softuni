@@ -1,0 +1,7 @@
+country_names = input().split(", ")
+capitals = input().split(", ")
+
+final = dict(zip(country_names, capitals))
+
+[print(f"{k} -> {v}") for k, v in final.items()]
+
