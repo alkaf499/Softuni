@@ -1,0 +1,22 @@
+pair_of_rows = int(input())
+
+all = {}
+
+for i in range(0, pair_of_rows):
+    name = input()
+    grade = float(input())
+    if name not in all:
+        all[name] = []
+        all[name].append(grade)
+    else:
+        all[name].append(grade)
+
+for k,v in all.items():
+    pers_sum = 0
+    for item in v:
+        pers_sum += item
+        pers_average = pers_sum / len(v)
+    if pers_average >= 4.5:
+        print(f"{k} -> {pers_average:.2f}")
+
+
