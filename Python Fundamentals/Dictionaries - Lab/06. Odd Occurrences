@@ -1,0 +1,16 @@
+odly = input().split(" ")
+odly = [i.lower() for i in odly]
+
+odd = {}
+to_check = []
+for numb in odly:
+    if numb not in odd:
+        odd[numb] = 1
+    else:
+        odd[numb] = odd[numb] + 1
+
+[to_check.append(i) for i,k in odd.items() if k % 2 != 0]
+
+print(' '.join(to_check))
+
+
