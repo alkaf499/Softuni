@@ -1,0 +1,27 @@
+number_of_commands = int(input())
+db = {}
+
+for i in range(0, number_of_commands):
+    command = input().split(" ")
+    to_do = command[0]
+    name = command[1]
+    
+    if len(command) == 3:
+        license_plate = command[2]
+
+    if command[0] == "register":
+        if name not in db:
+            db[name] = license_plate
+            print(f"{name} registered {license_plate} successfully")
+        else:
+            print(f"ERROR: already registered with plate number {db[name]}")
+
+    elif command[0] == "unregister":
+        if name not in db:
+            print(f"ERROR: user {name} not found")
+        else:
+            db.pop(name)
+            print(f"{name} unregistered successfully")
+
+for k,v in db.items():
+    print(f"{k} => {v}")
