@@ -1,0 +1,23 @@
+import itertools
+n = int(input())
+
+synonyms = {}
+
+for i in range(n):
+    word = input()
+    synonym = input()
+    lk = []
+
+    if word not in synonyms:
+        synonyms.setdefault(word, [])
+
+    synonyms[word].append(synonym)
+
+for k, v in synonyms.items():
+    print(f"{k} - {', '.join(v)}")
+
+
+
+
+
+
