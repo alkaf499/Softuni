@@ -1,0 +1,24 @@
+dict_stud = {}
+command = input()
+
+while ":" in command:
+    sepa = command.split(":")
+    name, id, course = sepa[0], sepa[1], sepa[2]
+
+    if course not in dict_stud:
+        dict_stud[course] = {}
+
+    dict_stud[course][id] = name
+    command = input()
+
+final = " ".join(command.split("_"))
+
+for key, value in dict_stud.items():
+    if final in key:
+        for ID, name in value.items():
+            print(f"{name} - {ID}")
+
+
+
+
+
