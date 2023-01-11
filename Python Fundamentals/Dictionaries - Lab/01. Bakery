@@ -1,0 +1,4 @@
+stock_bakery = input().split(" ")
+db_bakery = {stock_bakery[i]: int(stock_bakery[i+1]) for i in range(0, len(stock_bakery), 2)}
+
+print(db_bakery)
