@@ -1,0 +1,30 @@
+synonyms = {}
+
+while True:
+    resource = input()
+    
+    if resource == "stop":
+        break
+        
+    quantity = input()
+    
+    if quantity == "stop":
+        break
+
+    if resource not in synonyms:
+        synonyms.setdefault(resource, [])
+
+    synonyms[resource].append(int(quantity))
+
+for a in synonyms:
+    synonyms[a] = [sum(synonyms[a])]
+
+for k, v in synonyms.items():
+    for item in v:
+        print(f"{k} -> {item}")
+
+
+
+
+
+
