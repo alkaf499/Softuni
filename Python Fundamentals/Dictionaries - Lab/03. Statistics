@@ -1,0 +1,23 @@
+command = input().split(": ")
+stat_db = {}
+
+while command[0] != "statistics":
+    product = command[0]
+    quantity = int(command[1])
+
+    if  product not in stat_db:
+        stat_db[product] = int(quantity)
+    else:
+        stat_db[product] += int(quantity)
+
+    command = input().split(": ")
+
+total = 0
+print("Products in stock:")
+for k,v in stat_db.items():
+    print(f"- {k}: {v}")
+    total += v
+
+print(f"Total Products: {len(stat_db.keys())}")
+print(f"Total Quantity: {total}")
+
