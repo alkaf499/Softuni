@@ -1,0 +1,8 @@
+f_line = input()
+s_line = input()
+
+while f_line in s_line:
+    s_line = s_line.replace(f_line, "")
+
+print(s_line)
+        
