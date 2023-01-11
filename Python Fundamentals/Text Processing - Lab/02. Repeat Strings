@@ -1,0 +1,7 @@
+seq_str = input().split(" ")
+result = " "
+
+for word in seq_str:
+    result += word * len(word)
+
+print(result)
