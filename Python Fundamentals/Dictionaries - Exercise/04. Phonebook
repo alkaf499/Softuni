@@ -1,0 +1,30 @@
+name = input()
+phonebook = {}
+
+while not name.isnumeric():
+    new = name.split("-")
+    ls1 = []
+    ls2 = []
+    ls1.append(new[0])
+    ls2.append(new[1])
+
+    new_dict = dict(zip(ls1, ls2))
+    phonebook.update(new_dict)
+
+    name = input()
+
+for i in range(0, int(name)):
+
+    searching = input()
+
+    if searching in phonebook.keys():
+        off = {k: v for (k,v) in phonebook.items() if searching in k}
+
+        for k, v in off.items():
+            print(f"{k} -> {v}")
+    else:
+        print(f"Contact {searching} does not exist.")
+
+
+
+
