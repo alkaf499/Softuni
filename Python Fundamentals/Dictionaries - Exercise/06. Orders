@@ -1,0 +1,26 @@
+order = {}
+
+command = input().split(" ")
+
+while True:
+    if command[0] == "buy":
+        break
+
+    name = command[0]
+    price = command[1]
+    quantity = command[2]
+
+    if name not in order:
+        order[name] = []
+        order[name].append(float(price))
+        order[name].append(int(quantity))
+
+    else:
+        order[name][0] = float(price)
+        order[name][1] += int(quantity)
+
+    command = input().split(" ")
+
+for k,v in order.items():
+    print(f"{k} -> {v[0]*v[1]:.2f}")
+
