@@ -1,0 +1,20 @@
+info_course = {}
+counter = 0
+command = input().split(" : ")
+
+while command[0] != "end":
+    course_name = command[0]
+    stud_name = command[1]
+
+    if course_name not in info_course:
+        info_course[course_name] = []
+        info_course[course_name].append(stud_name)
+    else:
+        info_course[course_name].append(stud_name)
+
+    command = input().split(" : ")
+
+for k,v in info_course.items():
+    print(f"{k}: {len(v)}")
+    for item in v:
+        print(f"-- {item}")
