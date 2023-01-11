@@ -1,0 +1,9 @@
+string = input().split(" ")
+char = {}
+
+for st in string:
+    for i in st:
+        char[i] = char.get(i, 0) + 1
+
+for k,v in char.items():
+    print(f"{k} -> {v}")
