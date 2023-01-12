@@ -1,0 +1,18 @@
+usernames = input().split(", ")
+
+for i in usernames:
+    a = True
+    
+    if not 3 < len(i) <= 16:
+        a = False
+
+    for char in i:
+        if not (char.isalnum() or char == "_" or char == "-"):
+            a = False
+
+    if " " in i:
+        a = False
+
+    if a == True:
+        print(i)
+
