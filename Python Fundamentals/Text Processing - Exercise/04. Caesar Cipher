@@ -1,0 +1,8 @@
+plaine = input()
+encrypted = []
+
+for a in plaine:
+    a = ord(a) + 3
+    encrypted.append(chr(a))
+    
+print(''.join(encrypted))
