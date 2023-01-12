@@ -1,0 +1,12 @@
+import re
+sentence = input()
+pattern = r'(w{3}\.[a-zA-Z\d+\-?]+\.[a-zA-Z\.?]+)'
+urls = []
+
+while sentence:
+    matches = re.finditer(pattern, sentence)
+    for match in matches:
+        print(match.group(1))
+
+    sentence = input()
+
