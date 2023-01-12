@@ -1,0 +1,8 @@
+import re
+s_string = input()
+
+pattern = r'(^|(?<=\s))[A-Za-z0-9]+\.?\-?\_?[A-Za-z0-9]+?@[A-Za-z0-9]+\-?[A-Za-z0-9]+?\.[A-Za-z]+?\-?[a-zA-Z]+?([a-z]+)?(\.[a-z]+)?'
+matches = re.finditer(pattern,s_string)
+
+for match in matches:
+    print(match.group(0))
