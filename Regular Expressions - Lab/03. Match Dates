@@ -1,9 +1,0 @@
-import re
-text = input()
-
-pattern = (r'\b\d{2}\.[A-Z]{1}[a-z]{2}\.\d{4}|\d{2}\-[A-Z]{1}[a-z]{2}\-\d{4}|\d{2}/[A-Z]{1}[a-z]{2}/\d{4}')
-matches = re.findall(pattern, text)
-
-for match in matches:
-    print(f"Day: {match[0:2]}, Month: {match[3:6]}, Year: {match[7:11]}")
-
