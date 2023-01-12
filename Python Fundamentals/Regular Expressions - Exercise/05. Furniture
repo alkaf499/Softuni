@@ -1,0 +1,22 @@
+import re
+purchases = input()
+bought = []
+prices = []
+
+while purchases != "Purchase":
+    pattern = r'([a-zA-Z]+)<<(\d+\.?\d+?)!(\d+)'
+    matches = re.finditer(pattern, purchases)
+    if matches:
+        for match in matches:
+            bought.append(match.group(1))
+            suma = float(match.group(2))*float(match.group(3))
+            prices.append(suma)
+            
+    purchases = input()
+
+total = sum(prices)
+
+print("Bought furniture:")
+for i in bought:
+    print(i)
+print(f"Total money spend: {total:.2f}")
