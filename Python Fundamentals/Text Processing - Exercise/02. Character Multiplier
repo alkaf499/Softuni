@@ -1,0 +1,26 @@
+str_1, str_2= input().split(" ")
+sum = 0
+
+if len(str_1) == len(str_2):
+    for i in range(len(str_1)):
+        sum += ord(str_1[i]) * ord(str_2[i])
+
+elif len(str_1) > len(str_2):
+    diff = len(str_1) - len(str_2)
+
+    for i in range(len(str_2)):
+        sum += ord(str_1[i]) * ord(str_2[i])
+
+    for i in range(len(str_1) - diff, len(str_1)):
+        sum += ord(str_1[i])
+
+elif len(str_2) > len(str_1):
+    diff = len(str_2) - len(str_1)
+
+    for i in range(len(str_1)):
+        sum += ord(str_1[i]) * ord(str_2[i])
+
+    for i in range(len(str_2) - diff, len(str_2)):
+        sum += ord(str_2[i])
+
+print(sum)
