@@ -1,0 +1,8 @@
+import re
+
+line = input()
+word = input()
+
+count = len(re.findall(r'\b' + word + r'\b', line, re.IGNORECASE))
+
+print(count)
