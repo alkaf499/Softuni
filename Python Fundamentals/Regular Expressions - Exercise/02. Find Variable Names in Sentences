@@ -1,0 +1,11 @@
+import re
+pattern = r'\b_{1}([a-zA-Z0-9]+)\b'
+lines = input()
+all = []
+
+if lines:
+    matches = re.findall(pattern, lines)
+    if matches:
+        all.append(matches)
+        for i in all:
+            print(",".join(i))
