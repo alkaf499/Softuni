@@ -1,0 +1,9 @@
+text = input()
+
+for i, p in enumerate(text):
+    if p == ":":
+        index = text.index(":")
+        print(f":{text[i + 1]}")
+
+
+
