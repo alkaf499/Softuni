@@ -1,0 +1,16 @@
+import re
+
+pattern = '(\d+)'
+lines = input()
+all = []
+
+while True:
+    if lines:
+        matches = re.findall(pattern, lines)
+        if matches:
+            print(" ".join(matches), end= " ")
+    else:
+        break
+
+    lines = input()
+
