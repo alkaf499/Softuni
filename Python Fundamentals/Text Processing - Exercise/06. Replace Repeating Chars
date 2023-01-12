@@ -1,0 +1,3 @@
+import re
+to_replace = input()
+print(re.sub(r"(.)\1+", r"\1", to_replace))
