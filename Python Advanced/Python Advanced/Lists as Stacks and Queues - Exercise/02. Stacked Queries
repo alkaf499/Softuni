@@ -1,0 +1,35 @@
+empty_stack = []
+track_stack = []
+min_stack = []
+n = int(input())
+
+for i in range(n):
+    queries = input().split(" ")
+    command = queries[0]
+
+    if  command == "1":
+        number = queries[1]
+        empty_stack.append(number)
+        if len(empty_stack) == 1:
+            track_stack.append(number)
+            min_stack.append(number)
+        if int(number) > int(track_stack[-1]):
+            track_stack.append(number)
+        else:
+            track_stack.append(track_stack[-1])
+        if int(number) < int(min_stack[-1]):
+            min_stack.append(number)
+        else:
+            min_stack.append(min_stack[-1])
+
+    elif command == "2" and len(empty_stack) > 0:
+        empty_stack.pop()
+        track_stack.pop()
+        min_stack.pop()
+    elif command == "3" and len(empty_stack) > 0:
+        print(track_stack[-1])
+    elif command == "4" and len(empty_stack) > 0:
+        print(min_stack[-1])
+
+
+print(", ".join(empty_stack[::-1]))
