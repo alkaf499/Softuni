@@ -1,0 +1,32 @@
+from collections import deque
+
+quantity_food = int(input())
+food_order = input().split(" ")
+biggest = deque()
+orders = deque()
+
+for i in food_order:
+    orders.append(i)
+
+    if len(orders) == 1:
+        biggest.append(i)
+    if int(i) > int(biggest[-1]):
+        biggest.append(i)
+    else:
+        biggest.append(biggest[-1])
+
+print(biggest.pop())
+
+for order in list(orders):
+    if int(order) <= quantity_food:
+        quantity_food = quantity_food - int(order)
+        orders.popleft()
+    else:
+        break
+        
+if len(orders) > 0:
+    print(f"Orders left: {' '.join(orders)}")
+else:
+    print("Orders complete")
+
+
