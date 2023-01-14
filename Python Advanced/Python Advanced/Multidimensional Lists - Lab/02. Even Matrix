@@ -1,0 +1,7 @@
+matrix = []
+
+for i in range(int(input())):
+    line = [num for num in map(int, input().split(", ")) if num % 2 == 0]
+    matrix.append(line)
+
+print(matrix)
