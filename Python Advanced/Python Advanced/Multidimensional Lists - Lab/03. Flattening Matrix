@@ -1,0 +1,7 @@
+matrix = []
+
+for i in range(int(input())):
+    line = [num for num in map(int, input().split(", "))]
+    matrix.append(line)
+
+print([par for subpar in matrix for par in subpar])
