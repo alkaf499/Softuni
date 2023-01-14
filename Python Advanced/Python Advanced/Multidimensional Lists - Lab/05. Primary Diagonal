@@ -1,0 +1,9 @@
+matrix = [[i for i in map(int, input().split())] for a in range(int(input()))]
+result = 0
+
+for row_index in range(len(matrix)):
+    for column_index in range(len(matrix)):
+        if row_index == column_index:
+            result += matrix[row_index][column_index]
+
+print(result)
