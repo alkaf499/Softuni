@@ -1,0 +1,12 @@
+size = int(input())
+matrix = [input().split(" ") for a in range(size)]
+
+sum_prim_diag = 0
+sum_sec_diag = 0
+
+for index in range(0, size):
+        sum_prim_diag += int(matrix[index][index])
+        sum_sec_diag += int(matrix[index][size - index - 1])
+
+diff = abs(sum_prim_diag - sum_sec_diag)
+print(diff)
