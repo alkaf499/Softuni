@@ -1,0 +1,13 @@
+initial = tuple(map(float, input().split()))
+initial1 = []
+
+for ele in initial:
+    if ele not in initial1:
+        initial1.append(ele)
+
+for ele in initial1:
+    count = initial.count(ele)
+    print(f"{ele} - {count} times")
+
+
+
