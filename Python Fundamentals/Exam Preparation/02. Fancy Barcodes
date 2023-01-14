@@ -1,0 +1,21 @@
+import re
+count_of_barcodes = int(input())
+
+for i in range(0, count_of_barcodes):
+    barcodes = input()
+    pattern = r'@#{1,}[A-Z][a-zA-Z0-9]{4,}[A-Z]@#{1,}'
+    match = None
+    for match in re.finditer(pattern, barcodes):
+        if match:
+            digit_pattern = r'[0-9]+'
+            check_numbers = re.finditer(digit_pattern, match.group())
+            num = []
+            for i in check_numbers:
+                num.append(i.group())
+            if num:
+                print(f"Product group: {''.join(num)}")
+            else:
+                print("Product group: 00")
+
+    if match is None:
+        print("Invalid barcode")
