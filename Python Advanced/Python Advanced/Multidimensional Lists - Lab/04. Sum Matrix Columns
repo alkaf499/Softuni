@@ -1,0 +1,17 @@
+matrix = []
+rows, columns = map(int,input().split(", "))
+
+for i in range(rows):
+    line = [num for num in map(int, input().split())]
+    matrix.append(line)
+
+result = []
+
+for column in range(columns):
+    suma = 0
+    for row in range(rows):
+        suma += matrix[row][column]
+        
+    result.append(suma)
+
+[print(x) for x in result]
