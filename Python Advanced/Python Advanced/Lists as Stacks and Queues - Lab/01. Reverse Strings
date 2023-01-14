@@ -1,0 +1,7 @@
+normal_string = list(input())
+rev = []
+
+for a in range(len(normal_string)):
+    rev.append(normal_string.pop())
+
+print("".join(rev))
