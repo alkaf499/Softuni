@@ -1,0 +1,35 @@
+n_guests = int(input())
+invited = set()
+came = set()
+
+for i in range(n_guests):
+    reserv_codes = input()
+    invited.add(reserv_codes)
+
+who_came = input()
+
+while who_came != "END":
+    came.add(who_came)
+    who_came = input()
+
+not_come = invited - came
+
+vip = []
+reg = []
+
+for guest in not_come:
+    first = guest[0]
+    if first.isdigit():
+        vip.append(guest)
+    else:
+        reg.append(guest)
+
+vip = sorted(vip)
+reg = sorted(reg)
+number = len(vip) + len(reg)
+print(number)
+
+for i in vip:
+    print(i)
+for i in reg:
+    print(i)
