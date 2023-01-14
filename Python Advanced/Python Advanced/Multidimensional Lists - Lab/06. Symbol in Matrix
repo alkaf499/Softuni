@@ -1,0 +1,16 @@
+matrix = [[i for i in ",".join(input().split())] for a in range(int(input()))]
+sym = input()
+found = False
+
+for row in range(len(matrix)):
+    for column in range(len(matrix)):
+        if found:
+            break
+        if matrix[row][column] == sym:
+            print(f"({row}, {column})")
+            found = True
+
+if not found:
+    print(f"{sym} does not occur in the matrix")
+
+
