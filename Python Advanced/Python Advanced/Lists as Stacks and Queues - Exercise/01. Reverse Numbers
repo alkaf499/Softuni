@@ -1,0 +1,4 @@
+to_be_con = list(input().split(" "))
+to_be_con.reverse()
+
+print(" ".join(to_be_con))
