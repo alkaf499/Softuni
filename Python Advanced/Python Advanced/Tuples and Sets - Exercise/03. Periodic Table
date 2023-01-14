@@ -1,0 +1,12 @@
+count_lines = int(input())
+unique = set()
+
+for i in range(count_lines):
+    chem = input().split()
+
+    for i in chem:
+        unique.add(i)
+
+for ele in unique:
+    print(ele)
+
