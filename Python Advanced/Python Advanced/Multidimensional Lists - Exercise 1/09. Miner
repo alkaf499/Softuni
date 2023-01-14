@@ -1,0 +1,103 @@
+def check_all_coal(matrix):
+    global left_coal
+    left_coal = 0
+    for i in range(len(matrix)):
+        for j in range(len(matrix)):
+            if matrix[i][j] == "c":
+                left_coal += 1
+
+    return left_coal
+
+field_size = int(input())
+commands = input().split()
+matrix = []
+col = 0
+
+for _ in range(field_size):
+    matrix.append([x for x in input().split()])
+
+miner_row = 0
+miner_col = 0
+
+for i in range(len(matrix)):
+    for j in range(len(matrix)):
+        if matrix[i][j] == "s":
+            miner_row = i
+            miner_col = j
+            break
+
+for direction in commands:
+    if direction == "left":
+        if miner_col-1 < field_size and miner_col-1 >= 0:
+            miner_col = miner_col-1
+        else:
+            continue
+
+        if matrix[miner_row][miner_col] == "c":
+            col += 1
+            matrix[miner_row][miner_col] = "*"
+
+        elif matrix[miner_row][miner_col] == "e":
+            break
+
+        if check_all_coal(matrix) == 0:
+            break
+
+    elif direction == "right":
+
+        if miner_col+1 < field_size and miner_col+1 >= 0:
+            miner_col = miner_col+1
+        else:
+            continue
+
+        if matrix[miner_row][miner_col] == "c":
+            col += 1
+            matrix[miner_row][miner_col] = "*"
+
+        elif matrix[miner_row][miner_col] == "e":
+            break
+            
+        if check_all_coal(matrix) == 0:
+            break
+
+    elif direction == "up":
+        if miner_row - 1 < field_size and miner_row - 1 >= 0:
+            miner_row = miner_row - 1
+        else:
+            continue
+
+        if matrix[miner_row][miner_col] == "c":
+            col += 1
+            matrix[miner_row][miner_col] = "*"
+
+        elif matrix[miner_row][miner_col] == "e":
+            break
+
+        if check_all_coal(matrix) == 0:
+            break
+
+    elif direction == "down":
+        if miner_row + 1 < field_size and miner_row + 1 >= 0:
+            miner_row = miner_row + 1
+        else:
+            continue
+        if matrix[miner_row][miner_col] == "c":
+            col += 1
+            matrix[miner_row][miner_col] = "*"
+
+        elif matrix[miner_row][miner_col] == "e":
+            break
+
+        if check_all_coal(matrix) == 0:
+            break
+
+if matrix[miner_row][miner_col] == "e":
+    print(f"Game over! ({miner_row}, {miner_col})")
+
+elif check_all_coal(matrix) == 0:
+    print(f"You collected all coal! ({miner_row}, {miner_col})")
+
+else:
+    print(f"{check_all_coal(matrix)} pieces of coal left. ({miner_row}, {miner_col})")
+
+
