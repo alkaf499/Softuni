@@ -1,0 +1,15 @@
+lines = int(input())
+book = {}
+
+for i in range(lines):
+    name, grade = input().split()
+    if name not in book:
+        book[name] = []
+    book[name].append(float(grade))
+
+for student, grades in book.items():
+    average = sum(grades) / len(grades)
+    grades_list = ' '.join([str(f"{grade:.2f}") for grade in grades])
+    print(f"{student} -> {(grades_list)} (avg: {average:.2f})")
+
+
