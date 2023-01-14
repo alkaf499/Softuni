@@ -1,0 +1,16 @@
+n_ranges = int(input())
+longest = {}
+for _ in range(n_ranges):
+    first, second = input().split("-")
+    first_begin, first_end = tuple(map(int, first.split(',')))
+    second_begin, second_end = tuple(map(int, second.split(',')))
+
+    first_set = {num for num in range(first_begin, first_end + 1)}
+    second_set = {num for num in range(second_begin, second_end + 1)}
+
+    intersection = first_set & second_set
+
+    if len(intersection) > len(longest):
+        longest = intersection
+
+print(f"Longest intersection is [{', '.join(map(str, {i for i in longest}))}] with length {len(longest)}")
