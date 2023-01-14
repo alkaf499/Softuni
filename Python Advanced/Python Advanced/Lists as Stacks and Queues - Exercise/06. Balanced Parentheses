@@ -1,0 +1,22 @@
+from collections import deque
+expression = input()
+scanned = deque()
+
+for i in expression:
+    bol = True
+    
+    if i == "(" or i == "[" or i == "{":
+       scanned.append(i)
+    elif i == ")" and scanned and scanned[-1] == "(":
+        scanned.pop()
+    elif i == "]" and scanned and scanned[-1] == "[":
+        scanned.pop()
+    elif i == "}" and scanned and scanned[-1] == "{":
+         scanned.pop()
+    else:
+        bol = False
+
+if bol and len(expression) != 1:
+    print("YES")
+else:
+    print("NO")
