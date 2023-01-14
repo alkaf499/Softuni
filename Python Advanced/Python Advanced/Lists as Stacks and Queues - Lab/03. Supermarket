@@ -1,0 +1,16 @@
+from collections import deque
+
+clients_line = deque()
+command = input()
+
+while command != "End":
+    if command == "Paid":
+        new = "\n"
+        print(new.join(clients_line))
+        clients_line.clear()
+    else:
+        clients_line.append(command)
+
+    command = input()
+
+print(f"{len(clients_line)} people remaining.")
