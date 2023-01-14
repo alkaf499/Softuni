@@ -1,0 +1,42 @@
+f_seq = set(map(int,input().split()))
+s_seq = set(map(int,input().split()))
+n = int(input())
+
+for i in range(n):
+    command = input().split(" ")
+    to_do = command[0]
+    where = command[1]
+    command.remove(to_do)
+    command.remove(where)
+
+    if to_do == "Add":
+        number = [int(num) for num in command]
+        if where == "First":
+            for num in number:
+                f_seq.add(num)
+        elif where == "Second":
+            for num in number:
+                s_seq.add(int(num))
+
+    elif to_do == "Remove":
+        number = [int(num) for num in command]
+        if where == "First":
+            for num in number:
+                f_seq.discard(num)
+        elif where == "Second":
+            for num in number:
+                s_seq.discard(num)
+
+    if to_do == "Check":
+        if f_seq.issubset(s_seq) or s_seq.issubset(f_seq):
+            print("True")
+        else:
+            print("False")
+
+f_seq = sorted(f_seq)
+s_seq = sorted(s_seq)
+f_seq = ', '.join(str(i) for i in f_seq)
+s_seq = ', '.join(str(i) for i in s_seq)
+
+print(f_seq)
+print(s_seq)
