@@ -1,0 +1,14 @@
+rows, columns = [int(x) for x in input().split()]
+
+matrix = []
+a = 97
+for row in range(rows):
+    submatrix = []
+    for column in range(columns):
+        result = chr(row + a) + chr(row + a + column) + chr(row + a)
+        submatrix.append(result)
+
+    matrix.append(submatrix)
+
+for i in matrix:
+    print(" ".join(i))
