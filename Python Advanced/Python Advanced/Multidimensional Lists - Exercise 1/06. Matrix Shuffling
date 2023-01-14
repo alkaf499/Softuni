@@ -1,0 +1,32 @@
+rows, cols = map(int, input().split())
+matrix = []
+
+for _ in range(rows):
+    matrix.append([x for x in input().split()])
+
+command = input().split()
+
+while True:
+    if command[0] == "END":
+        break
+
+    if command[0] == "swap":
+        command.remove(command[0])
+        if len(command) == 4:
+            row1, col1, row2, col2 = map(int, command)
+            if int(row1) in range(rows) and int(row2) in range(rows) and int(col1) in range(cols) and int(
+                    col2) in range(cols):
+                temp = matrix[row1][col1]
+                matrix[row1][col1] = matrix[row2][col2]
+                matrix[row2][col2] = temp
+                for row in matrix:
+                    print(*row, sep=" ")
+            else:
+                print(f"Invalid input!")
+        else:
+            print(f"Invalid input!")
+
+    else:
+        print("Invalid input!")
+
+    command = input().split()
