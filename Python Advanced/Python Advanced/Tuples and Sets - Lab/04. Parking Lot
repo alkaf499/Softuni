@@ -1,0 +1,20 @@
+n_commands = int(input())
+set_in = set()
+set_out = set()
+
+for i in range(n_commands):
+    direction, registration = input().split(", ")
+    if direction == "IN":
+        set_in.add(registration)
+    elif direction == "OUT":
+        set_out.add(registration)
+        set_in.remove(registration)
+        set_out.remove(registration)
+
+difference = set_in - set_out
+
+if difference:
+    for car in difference:
+        print(car)
+else:
+    print("Parking Lot is Empty")
