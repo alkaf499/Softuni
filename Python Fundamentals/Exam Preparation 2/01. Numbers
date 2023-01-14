@@ -1,0 +1,25 @@
+numb = list(map(int, input().split(" ")))
+average_value = sum(numb) // len(numb)
+new = []
+
+for i in numb:
+    if i > average_value:
+        new.append(i)
+
+if len(new) >= 5:
+
+    new = sorted(new, reverse=True)
+    new = new[0:5]
+    new = [str(x) for x in new]
+    print(" ".join(new))
+
+elif 0 < len(new) < 5:
+    new = sorted(new, reverse=True)
+    new = new[0:5]
+    new = [str(x) for x in new]
+    print(" ".join(new))
+
+if len(new) == 0:
+    print("No")
+
+
