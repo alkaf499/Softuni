@@ -1,0 +1,16 @@
+f_line = list(map(int, (input().split())))
+set1 = set()
+set2 = set()
+
+for i in range(f_line[0]):
+    first = int(input())
+    set1.add(first)
+
+for b in range(f_line[1]):
+    second = int(input())
+    set2.add(second)
+
+diff = set1.intersection(set2)
+
+for i in diff:
+    print(i)
