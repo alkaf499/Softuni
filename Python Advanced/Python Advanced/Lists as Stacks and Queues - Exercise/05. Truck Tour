@@ -1,0 +1,25 @@
+from collections import deque
+
+number_pumps = int(input())
+diff = deque()
+
+for _ in range(number_pumps):
+    petrol, distance = input().split()
+    diff.append(int(petrol)-int(distance))
+
+for stop in range(number_pumps):
+    tank = 0
+    circle = True
+    for d in diff:
+        if tank + d < 0:
+            circle = False
+            break
+        else:
+            tank += d
+
+    if circle:
+        print(stop)
+        break
+    else:
+        diff.append(diff.popleft())
+
