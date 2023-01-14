@@ -1,0 +1,55 @@
+size = int(input())
+
+def bomb_space(matrix, row, col):
+    bomb_damage = [
+
+        [row, col + 1],
+        [row, col - 1],
+        [row + 1, col],
+        [row + 1, col + 1],
+        [row + 1, col - 1],
+        [row - 1, col],
+        [row - 1, col - 1],
+        [row - 1, col + 1],
+    ]
+
+    result = []
+
+    for neighbour_row, neighbour_col in bomb_damage:
+        if neighbour_row <= (len(matrix)-1) and neighbour_row >= 0 and neighbour_col <= (len(matrix)-1) and neighbour_col >= 0 and matrix[neighbour_row][neighbour_col] > 0:
+            result.append([neighbour_row, neighbour_col])
+    return result
+
+matrix = []
+
+for _ in range(size):
+    matrix.append([int(x) for x in input().split()])
+
+bombs_position = input().split()
+
+for bomb in bombs_position:
+    row, col = [int(x) for x in bomb.split(",")]
+    power = matrix[row][col]
+    if power < 0:
+        continue
+
+    collateral = bomb_space(matrix, row, col)
+
+    for rows, cols in collateral:
+        matrix[rows][cols] -= power
+        matrix[row][col] = 0
+
+
+sum = 0
+counter = 0
+for i in range(len(matrix)):
+    for j in range(len(matrix)):
+        if matrix[i][j] > 0:
+            counter += 1
+            sum += matrix[i][j]
+
+print(f"Alive cells: {counter}")
+print(f"Sum: {sum}")
+
+for row in matrix:
+    print(*row)
