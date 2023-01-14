@@ -1,0 +1,29 @@
+from collections import deque
+
+q_water = int(input())
+people_line = deque()
+command = input()
+
+while command != "Start":
+    people_line.append(command)
+    command = input()
+
+commands = input().split(" ")
+
+while commands[0] != "End":
+    if commands[0].isdigit():
+        if q_water >= int(commands[0]):
+            q_water = q_water - int(commands[0])
+            print(f"{people_line[0]} got water")
+            people_line.popleft()
+            
+        else:
+            print(f"{people_line[0]} must wait")
+           people_line.popleft()
+           
+    else:
+        q_water += int(commands[1])
+
+    commands = input().split(" ")
+
+print(f"{q_water} liters left")
