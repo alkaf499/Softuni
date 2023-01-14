@@ -1,0 +1,11 @@
+text = input()
+every = []
+
+for i in text:
+    every.append(i)
+
+every = sorted(every)
+every_set = sorted(set(every))
+
+for ele in every_set:
+    print(f"{ele}: {every.count(ele)} time/s")
