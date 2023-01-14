@@ -1,0 +1,17 @@
+from collections import deque
+
+ch_circle = deque()
+kids = input().split(" ")
+toss = int(input())
+
+for i in kids:
+    ch_circle.append(i)
+
+while len(ch_circle) > 1:
+    for num in range(toss):
+        ch_circle.append(ch_circle.popleft())
+
+    removed = ch_circle.pop()
+    print(f"Removed {removed}")
+
+print(f"Last is {''.join(ch_circle)}")
