@@ -1,0 +1,30 @@
+import re
+text = input()
+numbers = re.findall(r'[0-9]', text)
+coolness = 1
+
+for i in numbers:
+    coolness = coolness * int(i)
+
+pattern = r'(\*{2})([A-Z][a-z]{2,})(\*{2})|(\:{2})([A-Z][a-z]{2,})(\:{2})'
+emojis = re.finditer(pattern, text)
+filtered = []
+
+for match in emojis:
+        filtered.append(match.group())
+
+to_check_coolness = []
+nakraq = []
+sum_ascii = 0
+for item in filtered:
+    remove_symb = r'([A-Z][a-z]+)'
+    final = re.finditer(remove_symb, item)
+    for match in final:
+        a = (sum(ord(ch) for ch in match.group()))
+        if a > coolness:
+            to_check_coolness.append(item)
+
+print(f"Cool threshold: {coolness}")
+print(f"{len(filtered)} emojis found in the text. The cool ones are:")
+for i in to_check_coolness:
+    print(i)
