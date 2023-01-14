@@ -1,0 +1,12 @@
+expression = input()
+scanned = []
+
+for i in range(len(expression)):
+    if expression[i] == "(":
+       scanned.append(i)
+    elif expression[i] == ")":
+        closing_index = i
+        opening_index = scanned.pop()
+
+        if opening_index >= 0 and closing_index:
+            print(expression[opening_index:closing_index+1])
