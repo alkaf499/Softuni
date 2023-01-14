@@ -1,0 +1,17 @@
+rows, columns = [int(x) for x in input().split()]
+snake = input()
+index = 0
+matrix = [[0] * columns for i in range(rows)]
+
+for row in range(rows):
+    if row % 2 == 0:
+        for col in range(columns):
+                matrix[row][col] = snake[index % len(snake)]
+                index += 1
+    else:
+        for col in reversed(range(columns)):
+            matrix[row][col] = snake[index % len(snake)]
+            index += 1
+
+for row in matrix:
+    print(*row, sep="")
