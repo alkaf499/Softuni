@@ -1,0 +1,9 @@
+n_lines = int(input())
+unique = set()
+
+for i in range(n_lines):
+    name = input()
+    unique.add(name)
+
+for i in unique:
+    print(i)
