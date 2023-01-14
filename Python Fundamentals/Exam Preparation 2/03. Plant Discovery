@@ -1,0 +1,52 @@
+num_lines = int(input())
+plant_db = {}
+plant_rating = {}
+
+for i in range(num_lines):
+    plant, rarity = input().split("<->")
+
+    if plant not in plant_db.keys():
+        plant_db[plant] = []
+        plant_db[plant].append(rarity)
+
+    else:
+        plant_db[plant].append(rarity)
+
+while True:
+
+    command = input().split(": ")
+
+    if command[0] == "Exhibition":
+        break
+    to_do = command[1]
+    a = to_do.split(" - ")
+    plant = a[0]
+
+    if plant not in plant_db:
+        print("error")
+
+    elif "Rate" in command:
+        rating = int(a[1])
+        if plant not in plant_rating:
+            plant_rating[plant] = []
+            plant_rating[plant].append(int(rating))
+
+        else:
+            plant_rating[plant].append(int(rating))
+
+    elif "Update" in command:
+        rarity = a[1]
+        plant_db[plant] = rarity
+
+    elif "Reset" in command:
+        plant_rating[plant] = []
+
+
+print("Plants for the exhibition:")
+for name, rarity in plant_db.items():
+
+    if plant_rating[name]:
+        a = (sum(plant_rating[name]) / len(plant_rating[name]))
+    else:
+        a = 0.00
+    print(f"- {name}; Rarity: {''.join(rarity)}; Rating: {a:.2f}")
