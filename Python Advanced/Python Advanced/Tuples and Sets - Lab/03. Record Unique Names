@@ -1,0 +1,9 @@
+lines = int(input())
+unique = set([])
+
+for i in range(lines):
+    name = input()
+    unique.add(name)
+
+for a in unique:
+    print(a)
