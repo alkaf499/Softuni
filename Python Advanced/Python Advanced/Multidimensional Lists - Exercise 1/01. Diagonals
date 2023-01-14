@@ -1,0 +1,16 @@
+size = int(input())
+matrix = [input().split(", ") for a in range(size)]
+
+sum_prim_diag = 0
+sum_sec_diag = 0
+primary, secondary = [], []
+
+for index in range(0, size):
+        sum_prim_diag += int(matrix[index][index])
+        primary.append(matrix[index][index])
+
+        sum_sec_diag += int(matrix[index][size - index - 1])
+        secondary.append(matrix[index][size - index - 1])
+
+print(f"Primary diagonal: {', '.join(primary)}. Sum: {sum_prim_diag}")
+print(f"Secondary diagonal: {', '.join(secondary)}. Sum: {sum_sec_diag}")
