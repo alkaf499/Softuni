@@ -1,0 +1,21 @@
+clothes_box = list(map(int, input().split(" ")))
+space_per_rack = int(input())
+
+counter = 1
+sum = 0
+for _ in range(len(clothes_box)):
+    if sum + clothes_box[-1] == space_per_rack:
+        sum = 0
+        clothes_box.pop()
+        if clothes_box:
+            counter += 1
+
+    elif sum+clothes_box[-1] > space_per_rack:
+        counter += 1
+        sum = clothes_box.pop()
+
+    else:
+        sum += clothes_box.pop()
+
+print(counter)
+
