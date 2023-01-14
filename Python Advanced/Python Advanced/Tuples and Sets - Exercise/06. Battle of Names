@@ -1,0 +1,28 @@
+n = int(input())
+odd = set()
+even = set()
+
+for i in range(1, n+1):
+    names = input()
+    temp_sum = 0
+
+    for a in names:
+        temp_sum += ord(a)
+
+    final = temp_sum // i
+    if final % 2 == 0:
+        even.add(final)
+    else:
+        odd.add(final)
+
+if sum(odd) == sum(even):
+   result = odd.union(even)
+   
+elif sum(odd) > sum(even):
+    result = odd.difference(even)
+
+elif sum(even) > sum(odd):
+    result = odd.symmetric_difference(even)
+
+result = ', '.join(str(i) for i in result)
+print(result)
