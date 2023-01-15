@@ -1,0 +1,54 @@
+size = int(input())
+
+directions = {
+    'right': lambda r, c: (r, c + 1),
+    'left': lambda  r, c: (r, c - 1),
+    'up': lambda  r, c: (r - 1, c),
+    'down': lambda r, c: (r + 1, c),
+}
+
+matrix = []
+
+for _ in range(size):
+    matrix.append([x for x in input().split()])
+
+alice_row = 0
+alice_col = 0
+
+for i in range(len(matrix)):
+    for j in range(len(matrix)):
+        if matrix[i][j] == "A":
+            alice_row = i
+            alice_col = j
+            break
+
+direction = input()
+r, c = directions[direction](alice_row, alice_col)
+matrix[alice_row][alice_col] = "*"
+teabags = 0
+
+while True:
+    if 0 <= r < size and 0 <= c < size:
+        if matrix[r][c].isdigit():
+            teabags += int(matrix[r][c])
+            if teabags >= 10:
+                matrix[r][c] = "*"
+                print('She did it! She went to the party.')
+                break
+
+        elif matrix[r][c] == 'R':
+            matrix[r][c] = "*"
+            print("Alice didn't make it to the tea party.")
+            break
+
+    else:
+        print("Alice didn't make it to the tea party.")
+        break
+
+    matrix[r][c] = "*"
+    direction = input()
+    r, c = directions[direction](r, c)
+
+for ele in matrix:
+    print(' '.join(ele), sep='\n')
+
