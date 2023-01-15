@@ -1,0 +1,71 @@
+def move_space(row, col, direction, steps):
+
+    if direction == "left":
+        return row, col - steps
+    if direction == "right":
+        return row, col + steps
+    if direction == 'up':
+        return row - steps, col
+    if direction == "down":
+        return row + steps, col
+
+def is_inside(row,col):
+    return 0 <= row <= 4  and 0 <= col <= 4
+
+matrix = []
+
+for _ in range(5):
+    matrix.append([x for x in input().split()])
+
+shooter_row = 0
+shooter_col = 0
+targets = 0
+targets_shot = []
+
+for i in range(len(matrix)):
+    for j in range(len(matrix)):
+
+        if matrix[i][j] == "A":
+            shooter_row = i
+            shooter_col = j
+        elif matrix[i][j] == 'x':
+            targets += 1
+
+number_commands = int(input())
+matrix[shooter_row][shooter_col] = '.'
+
+for _ in range(number_commands):
+    command_parts = input().split()
+    to_do = command_parts[0]
+    direction = command_parts[1]
+
+    if to_do == "move":
+        steps = int(command_parts[2])
+        new_row, new_col = move_space(shooter_row, shooter_col, direction, steps)
+
+        if is_inside(new_row, new_col) and matrix[new_row][new_col] == ".":
+            shooter_row, shooter_col = new_row, new_col
+        else:
+            pass
+
+    elif to_do == "shoot":
+        shoot_row, shoot_col = move_space(shooter_row, shooter_col, direction, 1)
+        
+        while is_inside(shoot_row, shoot_col):
+            if matrix[shoot_row][shoot_col] == 'x':
+                targets -= 1
+                targets_shot.append([shoot_row, shoot_col])
+                matrix[shoot_row][shoot_col] = '.'
+                break
+            shoot_row, shoot_col = move_space(shoot_row, shoot_col, direction, 1)
+
+        if targets == 0:
+            break
+
+if targets == 0:
+    print(f'Training completed! All {len(targets_shot)} targets hit.')
+
+else:
+    print(f"Training not completed! {targets} targets left.")
+
+print(*targets_shot, sep='\n')
