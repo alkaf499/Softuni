@@ -1,0 +1,8 @@
+several_lines = input().split("|")
+new = []
+
+for list in range(len(several_lines)-1, -1, -1):
+    curr = several_lines[list].strip().split()
+    new.extend(curr)
+
+print(' '.join(new))
