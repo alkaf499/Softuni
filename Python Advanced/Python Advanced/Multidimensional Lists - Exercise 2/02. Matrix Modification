@@ -1,0 +1,29 @@
+rows = int(input())
+matrix = []
+
+for row in range(rows):
+    matrix.append([int(x) for x in input().split(" ")])
+
+while True:
+    command = input().split(" ")
+    to_do = command[0]
+    
+    if to_do == "END":
+        break
+        
+    n_row = int(command[1])
+    n_col = int(command[2])
+    value = int(command[3])
+
+    if n_row not in range(0, len(matrix)) or n_col not in range(0, len(matrix)):
+        print("Invalid coordinates")
+        continue
+
+    elif to_do == "Add":
+        matrix[n_row][n_col] += value
+
+    elif to_do == "Subtract":
+        matrix[n_row][n_col] -= value
+
+for row in matrix:
+        print(*row, sep= " ")
