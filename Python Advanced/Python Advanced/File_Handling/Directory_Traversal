@@ -1,0 +1,16 @@
+from os import walk
+
+dict = {}
+
+for root, dir, files in walk('.'):
+    for file in files:
+        extension = file.split('.')[-1]
+        if extension not in dict:
+            dict[extension] = []
+        dict[extension].append(file)
+
+for k,v in sorted(dict.items()):
+    new = '/n'
+    print(f".{k}")
+    for file in v:
+        print(f"- - - {''.join(file)}")
