@@ -1,0 +1,34 @@
+from Custom_except import  MustContainAtSymbolError
+from Custom_except import  InvalidDomainError
+from Custom_except import NameTooShortError
+
+emails = input()
+Good = True
+valid_domains = {'bg', 'com', 'org', 'net'}
+
+while True:
+
+    if emails == "End":
+        break
+
+    name_parts = emails.split("@")
+
+    if len(name_parts) != 2:
+        Good = False
+        raise MustContainAtSymbolError("Email must contain @")
+
+    name, domain_name = name_parts
+
+    if len(name) <= 4:
+        Good = False
+        raise NameTooShortError("Name must be more than 4 characters")
+
+    domain = emails.split(".")[-1]
+    if domain not in valid_domains:
+        Good = False
+        raise InvalidDomainError("Domain must be one of the following: .com, .bg, .org, .net")
+
+    if Good:
+        print(emails)
+    emails = input()
+
