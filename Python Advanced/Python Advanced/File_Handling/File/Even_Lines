@@ -1,0 +1,11 @@
+with open('file.txt', 'r') as lines:
+    counter = 1
+    to_be_swapped = ["-", ",", ".", "!", "?"]
+    for line in lines:
+        counter += 1
+        if counter % 2 == 0:
+            reversed = ' '.join(line.strip().split()[::-1])
+            for ele in reversed:
+                for symbol in to_be_swapped:
+                    reversed = reversed.replace(symbol, '@')
+            print(reversed)
