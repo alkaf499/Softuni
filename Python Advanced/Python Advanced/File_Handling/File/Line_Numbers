@@ -1,0 +1,18 @@
+with open('file.txt', 'r') as lines:
+    counter = 0
+
+    for line in lines:
+        letters = 0
+        punct_marks = 0
+
+        for ele in line:
+            if ele.isalpha():
+                letters += 1
+
+            elif ele in ('!', ",", "\'", ";", "\"", ".", "-", "?"):
+                punct_marks += 1
+
+        counter += 1
+        with open("output.txt", 'a+') as output_file:
+            output_file.write(f"Line {counter}: {' '.join(line.strip().split())} ({letters})({punct_marks})\n")
+
