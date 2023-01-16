@@ -1,0 +1,46 @@
+import os
+while True:
+
+    command = input()
+    if command == "End":
+        break
+
+    commands = command.split("-")
+    to_do = commands[0]
+    name = commands[1]
+
+    if to_do == "Create":
+        with open(f'./{name}', 'w') as file:
+            pass
+
+    elif to_do == "Add":
+        content = commands[2]
+
+        with open(f'./{name}', 'a') as file:
+            file.write(content + '\n')
+
+    elif to_do == "Replace":
+        old_string = commands[2]
+        new_string = commands[3]
+
+        try:
+            with open(f'./{name}', 'r') as file:
+                filedata = file.read()
+
+                filedata = filedata.replace(old_string,new_string)
+
+            with open(f'./{name}', 'w') as file:
+                file.write(filedata)
+
+        except FileNotFoundError:
+            print(f'An error occurred')
+
+
+    elif to_do == "Delete":
+
+        if os.path.exists(f"{name}"):
+            os.remove(f"{name}")
+        else:
+            print("An error occurred")
+
+
