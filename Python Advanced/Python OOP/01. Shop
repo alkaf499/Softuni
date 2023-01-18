@@ -5,3 +5,12 @@ class Shop():
 
     def get_items_count(self):
         return len(self.items)
+   
+
+import unittest
+
+class Tests(unittest.TestCase):
+    def test_init(self):
+        shop = Shop("Product Shop", [1, 2, 3])
+        self.assertEqual(shop.name, "Product Shop")
+        self.assertEqual(shop.items, [1, 2, 3])
