@@ -1,0 +1,46 @@
+class Flower():
+    def __init__(self, name, water_requirements, is_happy = False):
+        self.is_happy = is_happy
+        self.name = name
+        self.water_requirements = water_requirements
+
+    def water(self, quantity):
+        self.quantity = quantity
+        if quantity >= self.water_requirements:
+            self.is_happy = True
+
+    def status(self):
+        if self.is_happy:
+            return f"{self.name} is happy"
+        else:
+            return f"{self.name} is not happy"
+
+///
+
+import unittest
+
+class Tests(unittest.TestCase):
+    def setUp(self):
+        self.flower = Flower("Lilly", 100)
+
+    def test_init(self):
+        self.assertEqual(self.flower.name, "Lilly")
+        self.assertEqual(self.flower.water_requirements, 100)
+        self.assertEqual(self.flower.is_happy, False)
+        
+    def test_water_not_enough(self):
+        self.flower.water(50)
+        self.assertEqual(self.flower.is_happy, False)
+        
+    def test_status_no_changes(self):
+        self.flower.water(60)
+        self.assertEqual(self.flower.status(), "Lilly is not happy")
+        self.assertEqual(self.flower.is_happy, False)
+        
+    def test_status_changed(self):
+        self.flower.water(100)
+        self.assertEqual(self.flower.status(), "Lilly is happy")
+        self.assertEqual(self.flower.is_happy, True)
+
+if __name__ == "__main__":
+   unittest.main()
