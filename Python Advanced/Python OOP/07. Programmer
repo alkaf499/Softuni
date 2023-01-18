@@ -1,0 +1,69 @@
+class Programmer():
+    def __init__(self, name, language, skills):
+        self.name = name
+        self.language = language
+        self. skills = skills
+
+    def watch_course(self, course_name, language, skills_earned):
+        if language == self.language:
+            self.skills += skills_earned
+            return f"{self.name} watched {course_name}"
+        else:
+            return f"{self.name} does not know {language}"
+
+
+    def change_language(self, new_language, skills_needed):
+        if skills_needed <= self.skills and new_language != self.language:
+            previous_language = self.language
+            self.language = new_language
+            return f"{self.name} switched from {previous_language} to {new_language}"
+            
+        elif skills_needed <= self.skills and new_language == self.language:
+            return f"{self.name} already knows {new_language}"
+
+        elif skills_needed > self.skills:
+            needed_skills = skills_needed - self.skills
+            return f"{self.name} needs {needed_skills} more skills"
+            
+     ///
+import unittest
+
+class Tests(unittest.TestCase):
+    def test_init(self):
+        programmer = Programmer("Lemmy", "Python", 100)
+        self.assertEqual(programmer.name, "Lemmy")
+        self.assertEqual(programmer.language, "Python")
+        self.assertEqual(programmer.skills, 100)
+    
+    def test_watch_course_successfull(self):
+        programmer = Programmer("Lemmy", "Python", 100)
+        res = programmer.watch_course("Django Fundamentals", "Python", 50)
+        self.assertEqual(res, "Lemmy watched Django Fundamentals")
+        self.assertEqual(programmer.skills, 150)
+        
+    def test_watch_course_unsuccessfull(self):
+        programmer = Programmer("Lemmy", "Python", 100)
+        res = programmer.watch_course("Best C#", "C#", 20)
+        self.assertEqual(res, "Lemmy does not know C#")
+        self.assertEqual(programmer.skills, 100)
+        
+    def test_change_language_unsuccessful(self):
+        programmer = Programmer("Lemmy", "Java", 100)
+        res = programmer.change_language("Python", 150)
+        self.assertEqual(res, "Lemmy needs 50 more skills")
+        self.assertEqual(programmer.language, "Java")
+        
+    def test_change_language_successful(self):
+        programmer = Programmer("Lemmy", "Java", 100)
+        res = programmer.change_language("Python", 50)
+        self.assertEqual(res, "Lemmy switched from Java to Python")
+        self.assertEqual(programmer.language, "Python")
+        
+    def test_change_language_same_language(self):
+         programmer = Programmer("Lemmy", "Python", 100)
+         res = programmer.change_language("Python", 50)
+         self.assertEqual(res, "Lemmy already knows Python")
+         self.assertEqual(programmer.language, "Python")
+
+if __name__ == "__main__":
+   unittest.main()
