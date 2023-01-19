@@ -1,0 +1,19 @@
+class Book():
+
+    def __init__(self, name, author, pages):
+        self.name = name
+        self.author = author
+        self.pages = pages
+
+///
+import unittest
+
+class Tests(unittest.TestCase):
+   def test_name(self):
+      book = Book("Harry Potter", "J.K.Rowling", 250)
+      self.assertEqual(book.name, "Harry Potter")
+      self.assertEqual(book.author, "J.K.Rowling")
+      self.assertEqual(book.pages, 250)
+
+if __name__ == "__main__":
+   unittest.main()
