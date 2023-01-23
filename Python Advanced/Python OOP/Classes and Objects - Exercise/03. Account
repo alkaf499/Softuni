@@ -1,0 +1,63 @@
+class Account():
+    def __init__(self, id: int, name: str, balance = 0):
+        self.id = id
+        self.name = name
+        self.balance = balance
+
+    def credit(self, amount):
+        self.balance += amount
+        return self.balance
+
+    def debit(self,amount):
+        if amount <= self.balance:
+            self.balance -= amount
+            return self.balance
+
+        return "Amount exceeded balance"
+
+    def info(self):
+
+        return f"User {self.name} with account {self.id} has {self.balance} balance"
+
+///
+
+import unittest
+
+class Tests(unittest.TestCase):
+    def test_init_with_balance(self):
+        a = Account(1, "A", 10)
+        self.assertEqual(a.id, 1)
+        self.assertEqual(a.name, "A")
+        self.assertEqual(a.balance, 10)
+
+    def test_init_without_balance(self):
+        a = Account(1, "A")
+        self.assertEqual(a.id, 1)
+        self.assertEqual(a.name, "A")
+        self.assertEqual(a.balance, 0)
+        
+    def test_credit(self):
+        a = Account(123, "B", 10)
+        res = a.credit(10)
+        self.assertEqual(res, 20)
+        self.assertEqual(a.balance, 20)
+        
+    def test_debit_successfull(self):
+        a = Account(333444, "X", 1000)
+        res = a.debit(999)
+        self.assertEqual(res, 1)
+        self.assertEqual(a.balance, 1)
+        
+    def test_debit_unsuccessfull(self):
+        a = Account(5555, "N", 500)
+        res = a.debit(1000)
+        self.assertEqual(res, "Amount exceeded balance")
+        self.assertEqual(a.balance, 500)
+
+    def test_info(self):
+        a = Account(4321, "ABC", 400)
+        res = a.info()
+        self.assertEqual(res, "User ABC with account 4321 has 400 balance")
+        
+if __name__ == "__main__":
+   unittest.main()
