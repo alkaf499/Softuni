@@ -1,0 +1,60 @@
+import math
+from abc import ABC, abstractmethod
+
+
+class Shape(ABC):
+    def __init__(self):
+        pass
+
+    @abstractmethod
+    def calculate_area(self):
+        pass
+
+    @abstractmethod
+    def calculate_perimeter(self):
+        pass
+
+
+class Circle(Shape):
+
+    def __init__(self, radius):
+        super().__init__()
+        self.__radius = radius
+
+    def calculate_area(self):
+        area = math.pi * self.__radius * self.__radius
+        return area
+
+    def calculate_perimeter(self):
+        parameter = 2 * math.pi * self.__radius
+        return parameter
+
+
+class Rectangle(Shape):
+
+    def __init__(self, height, width):
+        super().__init__()
+        self.__height = height
+        self.__width = width
+
+    def calculate_area(self):
+        area = self.__height * self.__width
+        return area
+
+    def calculate_perimeter(self):
+        parameter = 2 * (self.__height + self.__width)
+
+        return parameter
+        
+   ///
+   # test circle
+import unittest
+
+class ShapesTests(unittest.TestCase):
+    def test(self):
+        c = Circle(5)
+        self.assertEqual(c.calculate_area(), 78.53981633974483)
+        self.assertEqual(c.calculate_perimeter(), 31.41592653589793)
+
+if __name__ == "__main__":
+    unittest.main()
